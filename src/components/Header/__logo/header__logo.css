@@ -12,7 +12,7 @@
   transition: opacity linear 0.5s;
 }
 
-.header__logo  {
+.header__logo:hover  {
   opacity: .6;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
 }

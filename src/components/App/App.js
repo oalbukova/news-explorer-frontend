@@ -12,18 +12,21 @@ import './App.css';
 
 function App() {
 
+
   return (
     <div className='App'>
       <Switch>
         <Route exact path='/'>
           <div className='app__elem-background'>
             <Header
+             // handleChangeBackground={changeBackground}
             />
             <SearchForm/>
           </div>
         </Route>
         <Route path='/saved-news'>
           <Header
+           // handleChangeBackground={changeBackground}
           />
         </Route>
       </Switch>

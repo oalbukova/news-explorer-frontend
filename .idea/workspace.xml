@@ -20,42 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99311588-236f-4de7-a62a-034e8814eb4a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/aws.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/news-explorer-frontend.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/App/__content/app__content.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/App/__elem-background/app__elem-background.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Header/__logo/_loggedin/header__logo_loggedin.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Header/__logo/header__logo.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Navigation/__button/_loggedin/navigation__button_loggedin.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Navigation/__button/navigation__button.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Navigation/__link/_active/navigation__link_active.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Navigation/__link/_loggedin/navigation__link_loggedin.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Navigation/__link/navigation__link.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Navigation/__signout/navigation__signout.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/SearchForm/__button/search__button.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/SearchForm/__form/search__form.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/SearchForm/__input/search__input.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/SearchForm/__subtitle/search__subtitle.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/SearchForm/__title/search__title.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.eslintignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.eslintrc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/App/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/App/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navigation/Navigation.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/Navigation.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navigation/Navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/Navigation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SearchForm/SearchForm.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SearchForm/SearchForm.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SearchForm/SearchForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SearchForm/SearchForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/__logo/header__logo.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/__logo/header__logo.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +71,7 @@
       <updated>1603237334301</updated>
       <workItem from="1603237340588" duration="33387000" />
       <workItem from="1603400008865" duration="109000" />
-      <workItem from="1603400130498" duration="44644000" />
+      <workItem from="1603400130498" duration="51469000" />
     </task>
     <servers />
   </component>
