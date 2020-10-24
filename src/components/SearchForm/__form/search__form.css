@@ -1,0 +1,30 @@
+.search__form {
+  display: flex;
+  justify-content: space-between;
+  max-width: 586px;
+  height: 64px;
+  border-radius: 100px;
+  border: 1px solid #d1d2d6;
+  background-color: #fff;
+  padding-left: 21px;
+}
+
+@media (max-width: 768px) {
+  .search__form {
+    max-width: 448px;
+    height: 56px;
+  }
+}
+
+@media (max-width: 500px) {
+  .search__form {
+    width: 100%;
+    height: auto;
+    padding-left: 0px;
+    background-color: transparent;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    max-width: 285px;
+  }
+}

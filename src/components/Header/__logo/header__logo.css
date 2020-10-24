@@ -1,0 +1,32 @@
+.header__logo {
+  font-family: "Roboto Slab", "Source Sans Pro", Arial, sans-serif;
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: normal;
+  line-height: 24px;
+  text-align: left;
+  padding: 12px 0 25px;
+  -webkit-transition: opacity linear 0.5s;
+  transition: opacity linear 0.5s;
+}
+
+.header__logo  {
+  opacity: .6;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+}
+
+@media (max-width: 1000px) {
+  .header__logo {
+    padding: 9px 0 0px;
+  }
+}
+
+@media (max-width: 700px) {
+  .header__logo {
+    padding: 0;
+    font-size: 16px;
+  }
+}
+

@@ -1,0 +1,27 @@
+@import url(./__elem-background/app__elem-background.css);
+@import url(./__content/app__content.css);
+
+.app {
+  font-family: "Inter", "Roboto", "Roboto Slab", "Source Sans Pro", Arial, sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+  max-width: 1440px;
+  min-width: 320px;
+  margin: 0 auto;
+  display: -ms-grid;
+  display: grid;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+  -ms-grid-rows: auto 1fr auto;
+  grid-template-rows: auto 1fr auto;
+  -ms-grid-columns: auto;
+  grid-template-columns: auto;
+  min-height: 100vh;
+}
+
