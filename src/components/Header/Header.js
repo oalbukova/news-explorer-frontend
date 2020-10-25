@@ -6,7 +6,7 @@ import './Header.css';
 function Header() {
   const [isTransparent, setIsTransparent] = React.useState(false);
   const backgroundHeader = `${isTransparent ? "#1A1B22" : "transparent" }`;
-  
+
   function changeBackground() {
     setIsTransparent(!isTransparent);
   }

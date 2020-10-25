@@ -1,0 +1,42 @@
+@import url(./__text/tooltip__text.css);
+
+.tooltip {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: center;
+  outline: none;
+  border: none;
+  margin-left: 5px;
+  position: relative;
+  -webkit-transition: opacity linear 0.5s;
+  transition: opacity linear 0.5s;
+}
+
+.tooltip:hover {
+  cursor: pointer;
+}
+
+.tooltip .tooltip__text {
+  padding: 15px 12px;
+  width: 160px;
+  box-shadow: 0 10px 22px rgba(59, 74, 116, 0.1);
+  border-radius: 10px;
+  background-color: #fff;
+  color: #000;
+  visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 110%;
+}
+
+.tooltip:hover .tooltip__text {
+  visibility: visible;
+}
+

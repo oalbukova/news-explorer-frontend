@@ -1,0 +1,23 @@
+.card__img {
+  box-sizing: border-box;
+  padding: 23px 21px 0;
+  height: 272px;
+  border-radius: 16px 16px 0 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 850px) {
+  .card__img {
+    height: 150px;
+    padding: 8px 9px 0;
+  }
+}
+
+@media (max-width: 488px) {
+  .card__img {
+    height: 196px;
+    padding: 16px 16px 0;
+  }
+}
+
