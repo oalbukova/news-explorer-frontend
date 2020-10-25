@@ -3,14 +3,17 @@ import NewsCardList from '../NewsCardList/NewsCardList'
 
 import './Main.css';
 import NewsCard from "../NewsCard/NewsCard";
+import Preloader from "../Preloader/Preloader";
 import img08 from '../../images/image08.jpg'
 import img04 from '../../images/image04.jpg'
 import img07 from '../../images/image07.jpg'
+
 
 function Main() {
 
   return (
     <div className='main'>
+      <Preloader/>
       <NewsCardList>
         <NewsCard
           img={img08}

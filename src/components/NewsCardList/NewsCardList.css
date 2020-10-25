@@ -1,7 +1,10 @@
 @import url(./__cards/card-list__cards.css);
 @import url(./__title/card-list__title.css);
+@import url(./__btn/card-list__btn.css);
 
 .card-list {
+  display: flex;
+  flex-direction: column;
   background-color: #f5f6f7;
   padding: 81px 104px;
 }
@@ -13,6 +16,12 @@
 }
 
 @media (max-width: 850px) {
+  .card-list {
+    padding: 41px 40px;
+  }
+}
+
+@media (max-width: 700px) {
   .card-list {
     padding: 41px 16px;
   }

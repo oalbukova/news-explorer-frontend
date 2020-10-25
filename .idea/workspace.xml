@@ -20,36 +20,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99311588-236f-4de7-a62a-034e8814eb4a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/NewsCard/__buttons/card__buttons.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/NewsCard/__caption/card__caption.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/NewsCard/__date/card__date.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/NewsCard/__img/card__img.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/NewsCard/__sourse/card__sourse.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/NewsCard/__tag/card__tag.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/NewsCard/__text/card__text.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/NewsCard/__title/card__title.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/NewsCardList/__cards/card-list__cards.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/NewsCardList/__title/card-list__title.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/image04.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/image07.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/image08.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/like-active.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/like.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/NewsCardList/__btn/card-list__btn.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Preloader/__text/preloader__text.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/App/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/App/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Footer/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/Footer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/__logo/header__logo.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/__logo/header__logo.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Main/Main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Main/Main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Main/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Main/Main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NewsCard/NewsCard.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NewsCard/NewsCard.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NewsCard/NewsCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NewsCard/NewsCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/NewsCard/__img/card__img.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NewsCard/__img/card__img.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/NewsCardList/NewsCardList.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NewsCardList/NewsCardList.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/NewsCardList/NewsCardList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NewsCardList/NewsCardList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SavedNews/SavedNews.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SavedNews/SavedNews.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SearchForm/__form/search__form.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SearchForm/__form/search__form.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SearchForm/__input/search__input.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SearchForm/__input/search__input.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/NewsCardList/__cards/card-list__cards.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NewsCardList/__cards/card-list__cards.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/NewsCardList/__title/card-list__title.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NewsCardList/__title/card-list__title.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Preloader/Preloader.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Preloader/Preloader.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Preloader/Preloader.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Preloader/Preloader.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +78,7 @@
       <updated>1603237334301</updated>
       <workItem from="1603237340588" duration="33387000" />
       <workItem from="1603400008865" duration="109000" />
-      <workItem from="1603400130498" duration="101767000" />
+      <workItem from="1603400130498" duration="108648000" />
     </task>
     <servers />
   </component>

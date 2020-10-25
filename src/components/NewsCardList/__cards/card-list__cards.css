@@ -11,17 +11,20 @@
   justify-content: center;
   list-style-type: none;
   padding: 0;
+  margin-bottom: 63px;
 }
 
 @media (max-width: 850px) {
   .card-list__cards {
+    margin-bottom: 30px;
     grid-template-columns: repeat(auto-fill, 224px);
-    grid-column-gap: 9px;
+    grid-column-gap: 8px;
   }
 }
 
 @media (max-width: 488px) {
   .card-list__cards {
+    margin-bottom: 14px;
     grid-template-columns: repeat(auto-fill, 288px);
     grid-row-gap: 11px;
   }
