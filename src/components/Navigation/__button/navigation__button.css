@@ -25,6 +25,7 @@
 
 @media (max-width: 700px) {
   .navigation__button {
+    margin-top: 21px;
     margin-bottom: 24px;
     width: 288px;
     height: 56px;

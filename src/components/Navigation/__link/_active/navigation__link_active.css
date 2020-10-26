@@ -5,7 +5,7 @@
 
 @media (max-width: 1000px) {
   .navigation__link_active {
-    padding-bottom: 21px;
+    padding-bottom: 0;
   }
 }
 

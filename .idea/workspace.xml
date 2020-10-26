@@ -20,17 +20,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99311588-236f-4de7-a62a-034e8814eb4a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/NewsCardList/__btn/card-list__btn.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Preloader/__text/preloader__text.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/NotFoundNews/NotFoundNews.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/NotFoundNews/NotFoundNews.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/NotFoundNews/__img/not-found-news__img.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/NotFoundNews/__text/not-found-news__text.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/NotFoundNews/__title/not-found-news__title.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/About/About.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/About/About.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Main/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Main/Main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NewsCard/__img/card__img.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NewsCard/__img/card__img.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NewsCardList/NewsCardList.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NewsCardList/NewsCardList.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navigation/__button/navigation__button.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/__button/navigation__button.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navigation/__link/_active/navigation__link_active.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/__link/_active/navigation__link_active.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/NewsCardList/NewsCardList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NewsCardList/NewsCardList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NewsCardList/__cards/card-list__cards.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NewsCardList/__cards/card-list__cards.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NewsCardList/__title/card-list__title.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NewsCardList/__title/card-list__title.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Preloader/Preloader.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Preloader/Preloader.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Preloader/Preloader.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Preloader/Preloader.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +78,7 @@
       <updated>1603237334301</updated>
       <workItem from="1603237340588" duration="33387000" />
       <workItem from="1603400008865" duration="109000" />
-      <workItem from="1603400130498" duration="108648000" />
+      <workItem from="1603400130498" duration="118869000" />
     </task>
     <servers />
   </component>
@@ -102,10 +102,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="1051" y="542" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1050@0.0.1920.1050" timestamp="1603303691550" />
-    <state x="774" y="433" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1603634116161">
+    <state x="774" y="433" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1603731262871">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="774" y="433" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1603634116161" />
+    <state x="774" y="433" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1603731262871" />
     <state width="1186" height="174" key="GridCell.Tab.0.bottom" timestamp="1603392059630">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
