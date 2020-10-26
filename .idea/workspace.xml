@@ -20,17 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99311588-236f-4de7-a62a-034e8814eb4a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/NotFoundNews/NotFoundNews.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/NotFoundNews/NotFoundNews.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/NotFoundNews/__img/not-found-news__img.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/NotFoundNews/__text/not-found-news__text.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/NotFoundNews/__title/not-found-news__title.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Header/_mobile/header_mobile.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/About/About.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/About/About.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Main/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Main/Main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navigation/__button/navigation__button.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/__button/navigation__button.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navigation/__link/_active/navigation__link_active.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/__link/_active/navigation__link_active.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NewsCardList/NewsCardList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NewsCardList/NewsCardList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +71,7 @@
       <updated>1603237334301</updated>
       <workItem from="1603237340588" duration="33387000" />
       <workItem from="1603400008865" duration="109000" />
-      <workItem from="1603400130498" duration="118869000" />
+      <workItem from="1603400130498" duration="120946000" />
     </task>
     <servers />
   </component>
@@ -98,10 +91,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1051" y="542" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1603303691550">
+    <state x="1051" y="542" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1603734170621">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="1051" y="542" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1050@0.0.1920.1050" timestamp="1603303691550" />
+    <state x="1051" y="542" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1050@0.0.1920.1050" timestamp="1603734170621" />
     <state x="774" y="433" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1603731262871">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

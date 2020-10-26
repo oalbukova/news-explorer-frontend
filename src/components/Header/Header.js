@@ -4,23 +4,15 @@ import Navigation from '../Navigation/Navigation.js';
 import './Header.css';
 
 function Header() {
-  const [isTransparent, setIsTransparent] = React.useState(false);
-  const backgroundHeader = `${isTransparent ? "#1A1B22" : "transparent" }`;
+  const [isMobile, setIsMobile] = React.useState(false);
+  const backgroundHeader = `${isMobile ? "header header_mobile" : " header" }`;
 
   function changeBackground() {
-    setIsTransparent(!isTransparent);
+    setIsMobile(!isMobile);
   }
-
-  // const [textColor, setTextColor] = React.useState('white');
-  //
-  // const changeTextColor= () => {
-  //   const grey = '#1A1B22';
-  //   setTextColor(grey);
-  // }
-
+  
   return (
-    <div className="header"
-         style={{backgroundColor: backgroundHeader}}>
+    <div className={backgroundHeader}>
       <input
         type="checkbox"
         className="header__menu-toggle"
