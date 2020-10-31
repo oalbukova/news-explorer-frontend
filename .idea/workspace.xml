@@ -20,112 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99311588-236f-4de7-a62a-034e8814eb4a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.editorconfig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/About/About.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/About/About.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/About/About.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/About/About.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/About/__title/about__title.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/About/__title/about__title.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/App/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/App/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/App/__content/app__content.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Footer/Footer.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/Footer.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Footer/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/Footer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Footer/__copyright/footer__copyright.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/__copyright/footer__copyright.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Footer/__icon/footer__icon.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/__icon/footer__icon.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Footer/__link/footer__link.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/__link/footer__link.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/__logo/header__logo.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/__logo/header__logo.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/__menu-button/header__menu-button.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/__menu-button/header__menu-button.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/__menu-span/header__menu-span.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/__menu-span/header__menu-span.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/__menu-toggle/header__menu-toggle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/__menu-toggle/header__menu-toggle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/InfoTooltip/InfoTooltip.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PopupWithForm/__span-registration/_tooltip/popup__span-registration_tooltip.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/InfoTooltip/InfoTooltip.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/InfoTooltip/InfoTooltip.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Login/Login.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PopupWithForm/__title/_type/popup__title_type_tooltip.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Login/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Main/Main.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Main/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Main/Main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navigation/Navigation.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/Navigation.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navigation/Navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/Navigation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navigation/__button/_loggedin/navigation__button_loggedin.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/__button/_loggedin/navigation__button_loggedin.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navigation/__button/navigation__button.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/__button/navigation__button.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navigation/__link/_active/navigation__link_active.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/__link/_active/navigation__link_active.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navigation/__link/navigation__link.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/__link/navigation__link.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NewsCard/NewsCard.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NewsCard/NewsCard.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NewsCard/NewsCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NewsCard/NewsCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NewsCard/__caption/card__caption.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NewsCard/__caption/card__caption.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NewsCard/__date/card__date.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NewsCard/__date/card__date.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NewsCard/__sourse/card__sourse.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NewsCard/__sourse/card__sourse.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NewsCard/__tag/card__tag.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NewsCard/__tag/card__tag.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NewsCard/__text/card__text.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NewsCard/__text/card__text.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NewsCard/__title/card__title.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NewsCard/__title/card__title.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NewsCard/tooltip/__text/tooltip__text.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NewsCard/tooltip/__text/tooltip__text.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NewsCard/tooltip/tooltip.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NewsCard/tooltip/tooltip.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NewsCardList/NewsCardList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NewsCardList/NewsCardList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NewsCardList/__btn/card-list__btn.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NewsCardList/__btn/card-list__btn.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NewsCardList/__cards/card-list__cards.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NewsCardList/__cards/card-list__cards.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NewsCardList/__title/card-list__title.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NewsCardList/__title/card-list__title.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NotFoundNews/NotFoundNews.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NotFoundNews/NotFoundNews.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NotFoundNews/NotFoundNews.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NotFoundNews/NotFoundNews.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NotFoundNews/__text/not-found-news__text.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NotFoundNews/__text/not-found-news__text.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NotFoundNews/__title/not-found-news__title.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NotFoundNews/__title/not-found-news__title.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PopupWithForm/PopupWithForm.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PopupWithForm/PopupWithForm.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PopupWithForm/PopupWithForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PopupWithForm/PopupWithForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PopupWithForm/__button-close/popup__button-close.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PopupWithForm/__button-close/popup__button-close.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PopupWithForm/__button-save/_type/popup__button-save_type_disabled.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PopupWithForm/__button-save/_type/popup__button-save_type_disabled.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PopupWithForm/__button-save/popup__button-save.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PopupWithForm/__button-save/popup__button-save.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PopupWithForm/__container/_type/popup__container_type_confirm.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PopupWithForm/__container/_type/popup__container_type_tooltip.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PopupWithForm/__container/popup__container.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PopupWithForm/__container/popup__container.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PopupWithForm/__input/popup__input.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PopupWithForm/__input/popup__input.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PopupWithForm/__registration-err/popup__registration-err.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PopupWithForm/__registration-err/popup__registration-err.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PopupWithForm/__span-error/_type/popup__span-error_type_active.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PopupWithForm/__span-error/_type/popup__span-error_type_active.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PopupWithForm/__span-error/popup__span-error.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PopupWithForm/__span-error/popup__span-error.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PopupWithForm/__span-registration/_blue/popup__span-registration_blue.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PopupWithForm/__span-registration/_blue/popup__span-registration_blue.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PopupWithForm/__span-registration/popup__span-registration.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PopupWithForm/__span-registration/popup__span-registration.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PopupWithForm/__title/popup__title.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PopupWithForm/__title/popup__title.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Preloader/Preloader.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Preloader/Preloader.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Preloader/Preloader.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Preloader/Preloader.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Preloader/__text/preloader__text.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Preloader/__text/preloader__text.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Register/Register.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Register/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Register/Register.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SavedNews/SavedNews.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SavedNews/SavedNews.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SavedNews/SavedNews.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SavedNewsHeader/SavedNewsHeader.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SavedNewsHeader/SavedNewsHeader.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SavedNewsHeader/__key/_bold/news-info__key_bold.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SavedNewsHeader/__key/_bold/news-info__key_bold.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SavedNewsHeader/__subtitle/news-info__subtitle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SavedNewsHeader/__subtitle/news-info__subtitle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SavedNewsHeader/__title/news-info__title.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SavedNewsHeader/__title/news-info__title.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SearchForm/SearchForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SearchForm/SearchForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SearchForm/__button/search__button.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SearchForm/__button/search__button.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SearchForm/__form/search__form.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SearchForm/__form/search__form.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SearchForm/__input/search__input.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SearchForm/__input/search__input.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SearchForm/__subtitle/search__subtitle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SearchForm/__subtitle/search__subtitle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SearchForm/__title/search__title.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SearchForm/__title/search__title.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/contexts/CurrentUserContext.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fonts/fonts.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/fonts/fonts.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/background.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/background.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/burgerbtn.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/burgerbtn.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/burgerclose.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/burgerclose.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/close_icon.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/close_icon.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/del.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/del.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/fb-round.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/fb.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/fb.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/github.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/github.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/image01.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/image01.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/image04.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/image04.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/image05.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/image05.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/image06.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/image06.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/image07.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/image07.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/image08.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/image08.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/like-hover.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/like-hover.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/like.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/like.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/logout.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/logout.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/me.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/me.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/signout.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/signout.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/Api.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/auth.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vendor/normalize.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/vendor/normalize.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,7 +71,7 @@
       <workItem from="1603400008865" duration="109000" />
       <workItem from="1603400130498" duration="162403000" />
       <workItem from="1603833662200" duration="10976000" />
-      <workItem from="1603848344660" duration="125684000" />
+      <workItem from="1603848344660" duration="126292000" />
     </task>
     <servers />
   </component>
