@@ -2,7 +2,7 @@ import React from "react";
 import PopupWithForm from "../PopupWithForm/PopupWithForm";
 
 function Register(props) {
-  const { onLoginState } = props;
+  const { changePopup, changePopupToInfoTooltip } = props;
   const emailRef = React.useRef();
   const passwordRef = React.useRef();
   const nameRef = React.useRef();
@@ -17,10 +17,6 @@ function Register(props) {
   const [nameValid, setNameValid] = React.useState(false);
   const [disabled, setDisabled] = React.useState(true);
 
-  React.useEffect(() => {
-    onLoginState(true);
-  }, [onLoginState]);
-
   function validate() {
     setRegisterEmailError(emailRef.current.validationMessage);
     setRegisterPasswordError(passwordRef.current.validationMessage);
@@ -32,9 +28,7 @@ function Register(props) {
     !passwordRef.current.validity.valid
       ? setPasswordValid(false)
       : setPasswordValid(true);
-    !nameRef.current.validity.valid
-      ? setNameValid(false)
-      : setNameValid(true);
+    !nameRef.current.validity.valid ? setNameValid(false) : setNameValid(true);
   }
 
   React.useEffect(() => {
@@ -45,7 +39,9 @@ function Register(props) {
   }, [props.isOpen]);
 
   React.useEffect(() => {
-    emailValid && passwordValid && nameValid ? setDisabled(false) : setDisabled(true);
+    emailValid && passwordValid && nameValid
+      ? setDisabled(false)
+      : setDisabled(true);
   }, [emailValid, passwordValid, nameValid, email, password, name]);
 
   function handleChangeEmail(e) {
@@ -65,16 +61,19 @@ function Register(props) {
 
   return (
     <PopupWithForm
-      name="form_registaration"
+      name="register"
       title="Регистрация"
       isOpen={props.isOpen}
       onClose={props.onClose}
       disabled={disabled}
+      changePopup={changePopup}
     >
-      <span className='popup__input-name' lang='en'>Email</span>
+      <span className="popup__input-name" lang="en">
+        Email
+      </span>
       <input
         className="popup__input"
-        id="email"
+        id="email-register"
         name="email"
         type="email"
         value={email || ""}
@@ -90,13 +89,13 @@ function Register(props) {
         className={`popup__span-error ${
           !emailValid && "popup__span-error_type_active "
         }`}
-        id="email-input-error"
+        id="email-input-error-register"
       >
-          {registerEmailError}
-        </span>
-      <span className='popup__input-name'>Пароль</span>
+        {registerEmailError}
+      </span>
+      <span className="popup__input-name">Пароль</span>
       <input
-        id="password"
+        id="password-register"
         name="password"
         type="password"
         value={password || ""}
@@ -113,12 +112,12 @@ function Register(props) {
         }`}
         id="password-input-error"
       >
-          {registerPasswordError}
-        </span>
-      <span className='popup__input-name'>Имя</span>
+        {registerPasswordError}
+      </span>
+      <span className="popup__input-name">Имя</span>
       <input
         className="popup__input"
-        id="name-input"
+        id="name-input-register"
         type="text"
         required
         placeholder="Введите своё имя"
@@ -134,16 +133,33 @@ function Register(props) {
         className={`popup__span-error ${
           !nameValid && "popup__span-error_type_active"
         }`}
-        id="name-input-error"
+        id="name-input-error-register"
       >
         {nameError}
       </span>
-      <span className='popup__registration-err'>Такой пользователь уже есть</span>
-      <button className={(!props.disabled ? `popup__button-save` : "popup__button-save popup__button-save_type_disabled")} type="submit"  disabled={props.disabled}>
+      <span className="popup__registration-err">
+        Такой пользователь уже есть
+      </span>
+      <button
+        className={
+          !disabled
+            ? "popup__button-save"
+            : "popup__button-save popup__button-save_type_disabled"
+        }
+        type="submit"
+        disabled={props.disabled}
+        onClick={changePopupToInfoTooltip}
+      >
         Зарегистрироваться
       </button>
       <p className="popup__span-registration">
-        или <span className='popup__span-registration popup__span-registration_blue'>Войти</span>
+        или{" "}
+        <span
+          className="popup__span-registration popup__span-registration_blue"
+          onClick={changePopup}
+        >
+          Войти
+        </span>
       </p>
     </PopupWithForm>
   );

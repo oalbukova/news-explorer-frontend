@@ -2,7 +2,7 @@
   height: 22px;
   width: 65%;
   color:  #1A1B22;
-  font-family: "Roboto", Arial, sans-serif;
+  font-family: 'Roboto', Arial, sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 22px;
@@ -13,54 +13,54 @@
 }
 
 .search__input:hover{
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 10px rgba(0, 0, 0, .3);
 }
 
 .search__input:focus {
-  background-color: rgba(47, 113, 229, 0.1);
+  background-color: rgba(47, 113, 229, .1);
 }
 
 .search__input::-webkit-input-placeholder {
   color: #B6BCBF;
-  text-indent: 0px;
-  transition: text-indent 0.3s ease;
+  text-indent: 0;
+  transition: text-indent .3s ease;
 }
 .search__input::-moz-placeholder {
-  color: #B6BCBF;;
-  text-indent: 0px;
-  transition: text-indent 0.3s ease;
+  color: #B6BCBF;
+  text-indent: 0;
+  transition: text-indent .3s ease;
 }
 
 .search__input:-moz-placeholder {
   color: #B6BCBF;
-  text-indent: 0px;
-  transition: text-indent 0.3s ease;
+  text-indent: 0;
+  transition: text-indent .3s ease;
 }
 
 .search__input:-ms-input-placeholder  {
   color: #B6BCBF;
-  text-indent: 0px;
-  transition: text-indent 0.3s ease;
+  text-indent: 0;
+  transition: text-indent .3s ease;
 }
 
 .search__input:focus::-webkit-input-placeholder {
   text-indent: 500px;
-  transition: text-indent 0.3s ease;
+  transition: text-indent .3s ease;
 }
 
 .search__input:focus::-moz-placeholder{
   text-indent: 500px;
-  transition: text-indent 0.3s ease;
+  transition: text-indent .3s ease;
 }
 
 .search__input:focus:-moz-placeholder  {
   text-indent: 500px;
-  transition: text-indent 0.3s ease;
+  transition: text-indent .3s ease;
 }
 
 .search__input:-ms-input-placeholder {
   text-indent: 500px;
-  transition: text-indent 0.3s ease;
+  transition: text-indent .3s ease;
 }
 
 

@@ -5,18 +5,17 @@
   font-weight: 400;
   text-align: center;
   text-decoration: none;
-  -webkit-transition: opacity linear 0.5s;
-  transition: opacity linear 0.5s;
+  -webkit-transition: opacity linear .5s;
+  transition: opacity linear .5s;
 }
 
 .popup__span-registration:hover {
+  cursor: pointer;
   opacity: .6;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
 }
 
-@media (max-width: 700px) {
+@media (max-width: 768px) {
   .popup__span-registration {
-    font-size: 12px;
-    line-height: 15px;
+    margin: 0;
   }
 }

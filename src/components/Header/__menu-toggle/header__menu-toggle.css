@@ -1,45 +1,39 @@
 .header__menu-toggle {
   opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   position: absolute;
 }
 
 .header__menu-toggle:checked~.header__menu-button>.header__menu-span {
-  -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
 }
 
 .header__menu-toggle:checked~.header__menu-button>.header__menu-span:before {
   top: 0;
-  -webkit-transform: rotate(0);
   transform: rotate(0);
 }
 
 .header__menu-toggle:checked~.header__menu-button>.header__menu-span:after {
   top: 0;
-  -webkit-transform: rotate(90deg);
   transform: rotate(90deg);
 }
 
 .header__menu-toggle:checked~.navigation {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 
-@media screen and (max-width: 700px) {
+@media (max-width: 700px) {
   .header__menu-toggle:checked~.header__menu-button>.header__menu-span_loggedin:before {
     background-color: white;
   }
 }
 
-@media screen and (max-width: 700px) {
+@media (max-width: 700px) {
   .header__menu-toggle:checked~.header__menu-button>.header__menu-span_loggedin:after {
     background-color: white;
   }
 }
 
-@media screen and (min-width: 700px) {
+@media (min-width: 700px) {
   .header__menu-toggle {
     display: none;
   }

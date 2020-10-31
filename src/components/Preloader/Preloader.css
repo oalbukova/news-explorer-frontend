@@ -1,7 +1,7 @@
 @import url(./__text/preloader__text.css);
 
 .preloader {
-  padding: 80px 0;
+  padding: 80px 0 34px;
   display: flex;
   flex-direction: column;
   margin: 0;

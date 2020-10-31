@@ -12,10 +12,8 @@
 
 @media (max-width: 700px) {
   .navigation__button_loggedin:hover {
-    -webkit-transition: opacity linear 0.5s;
-    transition: opacity linear 0.5s;
+    transition: opacity linear .5s;
     opacity: .6;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
   }
 }
 

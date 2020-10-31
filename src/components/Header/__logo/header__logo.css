@@ -1,5 +1,5 @@
 .header__logo {
-  font-family: "Roboto Slab", Arial, sans-serif;
+  font-family: 'Roboto Slab', Arial, sans-serif;
   color: #fff;
   text-decoration: none;
   font-size: 20px;
@@ -8,18 +8,16 @@
   line-height: 24px;
   text-align: left;
   padding: 12px 0 25px;
-  -webkit-transition: opacity linear 0.5s;
-  transition: opacity linear 0.5s;
+  transition: opacity linear .5s;
 }
 
 .header__logo:hover  {
   opacity: .6;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
 }
 
 @media (max-width: 1000px) {
   .header__logo {
-    padding: 9px 0 0px;
+    padding: 9px 0 0;
   }
 }
 

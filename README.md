@@ -1,3 +1,13 @@
+#NewsExplorer
+##Фронтенд для проекта NewsExplorer
+
+Данный проект представляет собой типовое веб-приложение для поиска новостей, с помощью которого можно искать новости по ключевому слову и сохранять их в личном кабинете. 
+
+###Проект на gh-pages: https://oalbukova.github.io/news-explorer-frontend/
+
+Верстка сайта происходила согласно: [макет Фигма](https://www.figma.com/file/Dhl21eRzzbFMBe0DU9SglF/Diploma-WEB-v2.0-(for-students)?node-id=157%3A1409)
+   
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -66,3 +76,8 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+
+
+#### _Автор: Альбукова Ольга_
+_e-mail: o.albukova@gmail.com_

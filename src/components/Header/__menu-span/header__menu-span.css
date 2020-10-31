@@ -4,11 +4,7 @@
   width: 100%;
   height: 2px;
   background-color: transparent;
-  -webkit-transition: -webkit-transform .3s;
-  transition: -webkit-transform .3s;
   transition: transform .3s;
-  transition: transform .3s, -webkit-transform .3s;
-
 }
 
 .header__menu-span:before {
@@ -30,16 +26,11 @@
   width: 100%;
   height: 2px;
   background-color: white;
-  -webkit-transition: -webkit-transform .3s;
-  transition: -webkit-transform .3s;
   transition: transform .3s;
-  transition: transform .3s, -webkit-transform .3s;
   z-index: 2;
 }
 
 .header__menu-span:hover {
-  -webkit-transition: opacity linear 0.5s;
-  transition: opacity linear 0.5s;
+  transition: opacity linear .5s;
   opacity: .6;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
 }

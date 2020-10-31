@@ -9,7 +9,7 @@
 
 .navigation {
   display: flex;
-  font-family: "Roboto", Arial, sans-serif;
+  font-family: 'Roboto', Arial, sans-serif;
   font-size: 18px;
   font-weight: 500;
   letter-spacing: normal;
@@ -32,7 +32,7 @@
     box-sizing: border-box;
     position: absolute;
     top: 56px;
-    right: 0px;
+    right: 0;
     z-index: 2;
     background-color: #1A1B22;
     width: 100%;

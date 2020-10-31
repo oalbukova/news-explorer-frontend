@@ -19,7 +19,7 @@
   .search__form {
     width: 100%;
     height: auto;
-    padding-left: 0px;
+    padding-left: 0;
     background-color: transparent;
     border: none;
     display: flex;

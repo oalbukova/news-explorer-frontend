@@ -1,9 +1,8 @@
 import React from "react";
-import {Link} from "react-router-dom";
 import PopupWithForm from "../PopupWithForm/PopupWithForm";
 
 function Login(props) {
-  const {onLoginState} = props;
+  const { changePopup, isOpen, onClose } = props;
   const emailRef = React.useRef();
   const passwordRef = React.useRef();
   const [email, setEmail] = React.useState("");
@@ -13,13 +12,6 @@ function Login(props) {
   const [emailValid, setEmailValid] = React.useState(false);
   const [passwordValid, setPasswordValid] = React.useState(false);
   const [disabled, setDisabled] = React.useState(true);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!email || !password) {
-      return;
-    }
-  };
 
   function validate() {
     setLoginEmailError(emailRef.current.validationMessage);
@@ -43,10 +35,6 @@ function Login(props) {
     emailValid && passwordValid ? setDisabled(false) : setDisabled(true);
   }, [emailValid, passwordValid, email, password]);
 
-  React.useEffect(() => {
-    onLoginState(false);
-  }, [onLoginState]);
-
   function handleChangeEmail(e) {
     setEmail(e.target.value);
     validate();
@@ -59,19 +47,19 @@ function Login(props) {
 
   return (
     <PopupWithForm
-      name="form_login"
+      name="login"
       title="Вход"
-      isOpen={props.isOpen}
-      onClose={props.onClose}
-      onSubmit={handleSubmit}
-      isLoading={props.isLoading}
+      isOpen={isOpen}
+      onClose={onClose}
       disabled={disabled}
     >
-      <span className='popup__input-name' lang='en'>Email</span>
+      <span className="popup__input-name" lang="en">
+        Email
+      </span>
       <input
         className="popup__input"
         required
-        id="email"
+        id="email-login"
         name="email"
         type="email"
         placeholder="Введите почту"
@@ -86,15 +74,15 @@ function Login(props) {
         className={`popup__span-error ${
           !emailValid && "popup__span-error_type_active "
         }`}
-        id="email-input-error"
+        id="email-input-error-login"
       >
-          {loginEmailError}
-        </span>
-      <span className='popup__input-name'>Пароль</span>
+        {loginEmailError}
+      </span>
+      <span className="popup__input-name">Пароль</span>
       <input
         className="popup__input"
         required
-        id="password"
+        id="password-login"
         name="password"
         type="password"
         placeholder="Введите пароль"
@@ -107,19 +95,32 @@ function Login(props) {
         className={`popup__span-error ${
           !passwordValid && "popup__span-error_type_active"
         }`}
-        id="password-input-error"
+        id="password-input-error-login"
       >
-          {loginPasswordError}
-        </span>
-      <button className={(!props.disabled ? `popup__button-save` : "popup__button-save popup__button-save_type_disabled")} type="submit"  disabled={props.disabled}>
+        {loginPasswordError}
+      </span>
+      <button
+        className={
+          !disabled
+            ? "popup__button-save"
+            : "popup__button-save popup__button-save_type_disabled"
+        }
+        type="submit"
+        disabled={props.disabled}
+      >
         Войти
       </button>
       <p className="popup__span-registration">
-        или <span className='popup__span-registration popup__span-registration_blue'>Зарегистрироваться</span>
+        или{" "}
+        <span
+          className="popup__span-registration popup__span-registration_blue"
+          onClick={changePopup}
+        >
+          Зарегистрироваться
+        </span>
       </p>
     </PopupWithForm>
   );
 }
 
 export default Login;
-

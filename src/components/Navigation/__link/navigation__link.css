@@ -2,14 +2,12 @@
   color: white;
   text-decoration: none;
   margin-left: 34px;
-  -webkit-transition: opacity linear 0.5s;
-  transition: opacity linear 0.5s;
+  transition: opacity linear .5s;
   z-index: 2;
 }
 
 .navigation__link:hover {
   opacity: .6;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
 }
 
 @media (max-width: 1000px) {

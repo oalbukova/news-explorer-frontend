@@ -1,13 +1,10 @@
 .card-list__cards {
-  font-family: "Inter", Arial, sans-serif;
+  font-family: 'Inter', Arial, sans-serif;
   width: 100%;
-  display: -ms-grid;
   display: grid;
   grid-template-columns: repeat(auto-fill, 400px);
   grid-column-gap: 16px;
   grid-row-gap: 16px;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
   list-style-type: none;
   padding: 0;
