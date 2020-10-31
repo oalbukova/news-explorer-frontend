@@ -4,6 +4,7 @@
   margin-left: 34px;
   -webkit-transition: opacity linear 0.5s;
   transition: opacity linear 0.5s;
+  z-index: 2;
 }
 
 .navigation__link:hover {

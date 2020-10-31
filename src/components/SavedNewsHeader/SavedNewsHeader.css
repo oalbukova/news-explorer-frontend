@@ -1,0 +1,27 @@
+@import url(./__subtitle/news-info__subtitle.css);
+@import url(./__title/news-info__title.css);
+@import url(./__key/news-info__key.css);
+@import url(./__key/_bold/news-info__key_bold.css);
+
+.news-info {
+  padding: 41px 104px 37px;
+}
+
+@media (max-width: 1000px) {
+  .news-info {
+    padding: 26px 40px 16px;
+  }
+}
+
+@media (max-width: 700px) {
+  .news-info {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 400px) {
+  .news-info {
+    padding: 8px 16px 31px 16px;
+  }
+}
+

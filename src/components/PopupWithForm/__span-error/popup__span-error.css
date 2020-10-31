@@ -1,0 +1,12 @@
+.popup__span-error {
+  font-family: "Inter", Arial, sans-serif;
+  color: #ff0000;
+  font-size: 12px;
+  line-height: 15px;
+  font-weight: 400;
+  height: 14px;
+  margin: 3px 0 14px;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+}
+

@@ -1,7 +1,7 @@
 import React from "react";
 
 import './NotFoundNews.css';
-import noResult from '../../images/no-result.png'
+import noResult from '../../images/not-found.svg'
 
 function NotFoundNews() {
 

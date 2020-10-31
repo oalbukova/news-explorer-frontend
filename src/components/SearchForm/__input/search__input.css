@@ -20,6 +20,50 @@
   background-color: rgba(47, 113, 229, 0.1);
 }
 
+.search__input::-webkit-input-placeholder {
+  color: #B6BCBF;
+  text-indent: 0px;
+  transition: text-indent 0.3s ease;
+}
+.search__input::-moz-placeholder {
+  color: #B6BCBF;;
+  text-indent: 0px;
+  transition: text-indent 0.3s ease;
+}
+
+.search__input:-moz-placeholder {
+  color: #B6BCBF;
+  text-indent: 0px;
+  transition: text-indent 0.3s ease;
+}
+
+.search__input:-ms-input-placeholder  {
+  color: #B6BCBF;
+  text-indent: 0px;
+  transition: text-indent 0.3s ease;
+}
+
+.search__input:focus::-webkit-input-placeholder {
+  text-indent: 500px;
+  transition: text-indent 0.3s ease;
+}
+
+.search__input:focus::-moz-placeholder{
+  text-indent: 500px;
+  transition: text-indent 0.3s ease;
+}
+
+.search__input:focus:-moz-placeholder  {
+  text-indent: 500px;
+  transition: text-indent 0.3s ease;
+}
+
+.search__input:-ms-input-placeholder {
+  text-indent: 500px;
+  transition: text-indent 0.3s ease;
+}
+
+
 @media (max-width: 768px) {
   .search__input {
     margin-top: 15px;

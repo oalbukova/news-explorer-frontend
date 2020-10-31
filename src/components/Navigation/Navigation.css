@@ -4,8 +4,11 @@
 @import url(./__button/navigation__button.css);
 @import url(./__button/_loggedin/navigation__button_loggedin.css);
 @import url(./__signout/navigation__signout.css);
+@import url(./__signout/_loggedin/navigation__signout_loggedin.css);
+@import url(./__link/_active-black/navigation__link_active-black.css);
 
 .navigation {
+  display: flex;
   font-family: "Roboto", Arial, sans-serif;
   font-size: 18px;
   font-weight: 500;

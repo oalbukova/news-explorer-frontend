@@ -1,4 +1,7 @@
 .navigation__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: white;
   font-family: "Roboto", Arial, sans-serif;
   font-size: 18px;
@@ -12,7 +15,17 @@
   background-color: transparent;
   padding: 0 16px;
   cursor: pointer;
+  outline: none;
+  -webkit-transition: opacity linear 0.5s;
+  transition: opacity linear 0.5s;
+  text-decoration: none;
+  z-index: 2;
 }
+
+/*.navigation__button:hover   {*/
+/*  opacity: .6;*/
+/*  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";*/
+/*}*/
 
 @media (max-width: 1000px) {
   .navigation__button {
@@ -25,9 +38,7 @@
 
 @media (max-width: 700px) {
   .navigation__button {
-    margin-top: 21px;
-    margin-bottom: 24px;
-    width: 288px;
+    margin: 21px 16px 24px;
     height: 56px;
   }
 }

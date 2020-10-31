@@ -1,0 +1,14 @@
+.footer__copyright {
+  color: #b6bcbf;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+  text-align: left;
+}
+
+@media (max-width: 767px) {
+  .footer__copyright {
+    margin: 28px 0 0;
+  }
+}

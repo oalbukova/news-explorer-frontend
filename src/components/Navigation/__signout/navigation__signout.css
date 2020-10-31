@@ -1,10 +1,11 @@
 .navigation__signout {
-  padding-left: 12px;
-  -webkit-transition: opacity linear 0.5s;
-  transition: opacity linear 0.5s;
+  width: 18px;
+  height: 16px;
+  margin-left: 12px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(../../../images/signout.svg);
 }
 
-.navigation__signout   {
-  opacity: .6;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
-}
+

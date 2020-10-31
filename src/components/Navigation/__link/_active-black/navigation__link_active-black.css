@@ -1,0 +1,16 @@
+.navigation__link_active-black {
+  padding-bottom: 24px;
+  border-bottom: solid 3px  #1a1b22;
+}
+
+@media (max-width: 1000px) {
+  .navigation__link_active-black {
+    padding-bottom: 19px;
+  }
+}
+
+@media (max-width: 700px) {
+  .navigation__link_active-black {
+    border-bottom: none;
+  }
+}

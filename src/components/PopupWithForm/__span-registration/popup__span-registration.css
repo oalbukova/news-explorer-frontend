@@ -1,0 +1,22 @@
+.popup__span-registration {
+  color: #000;
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+  text-decoration: none;
+  -webkit-transition: opacity linear 0.5s;
+  transition: opacity linear 0.5s;
+}
+
+.popup__span-registration:hover {
+  opacity: .6;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+}
+
+@media (max-width: 700px) {
+  .popup__span-registration {
+    font-size: 12px;
+    line-height: 15px;
+  }
+}

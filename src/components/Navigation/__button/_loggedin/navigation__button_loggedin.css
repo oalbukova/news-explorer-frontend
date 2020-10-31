@@ -2,3 +2,27 @@
   border: 1px solid #D1D2D6;
   color: #1a1b22;
 }
+
+@media (max-width: 700px) {
+  .navigation__button_loggedin {
+    border: 1px solid #FFF;
+    color: white;
+  }
+}
+
+@media (max-width: 700px) {
+  .navigation__button_loggedin:hover {
+    -webkit-transition: opacity linear 0.5s;
+    transition: opacity linear 0.5s;
+    opacity: .6;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+  }
+}
+
+
+@media (min-width: 700px) {
+  .navigation__button_loggedin:hover {
+    border: 1px solid #1A1B22;
+    color: #1a1b22;
+  }
+}

@@ -13,4 +13,21 @@
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  position: absolute;
+  top: 23px;
+  left: 26px;
+}
+
+@media (max-width: 850px) {
+  .card__tag {
+    top: 8px;
+    left: 9px;
+  }
+}
+
+@media (max-width: 488px) {
+  .card__tag {
+    top: 16px;
+    left: 16px;
+  }
 }

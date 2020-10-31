@@ -19,7 +19,7 @@ function SearchForm() {
           name="search"
           pattern="[A-Za-zА-Яа-яЁё -]*"
           minLength="2"
-          maxLength="40"
+          maxLength="50"
         />
         <button
           className='search__button' type="submit">Искать

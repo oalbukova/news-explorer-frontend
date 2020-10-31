@@ -8,8 +8,7 @@
   transition: -webkit-transform .3s;
   transition: transform .3s;
   transition: transform .3s, -webkit-transform .3s;
-  -webkit-transition: opacity linear 0.5s;
-  transition: opacity linear 0.5s;
+
 }
 
 .header__menu-span:before {
@@ -20,6 +19,7 @@
   height: 2px;
   width: 100%;
   background-color: white;
+  z-index: 2;
 }
 
 .header__menu-span:after {
@@ -34,9 +34,12 @@
   transition: -webkit-transform .3s;
   transition: transform .3s;
   transition: transform .3s, -webkit-transform .3s;
+  z-index: 2;
 }
 
 .header__menu-span:hover {
+  -webkit-transition: opacity linear 0.5s;
+  transition: opacity linear 0.5s;
   opacity: .6;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
 }

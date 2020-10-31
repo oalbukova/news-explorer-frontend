@@ -1,17 +1,20 @@
 @import url(./__logo/header__logo.css);
 @import url(./__logo/_loggedin/header__logo_loggedin.css);
+@import url(./__logo/_mobile/header__logo_mobile.css);
 @import url(./__menu-button/header__menu-button.css);
 @import url(./__menu-span/header__menu-span.css);
+@import url(__menu-span/_loggedin/header__menu-span_loggedin.css);
 @import url(./__menu-toggle/header__menu-toggle.css);
 @import url(./_mobile/header_mobile.css);
+@import url(./_save-news/header_save-news.css);
 
 .header {
   height: 60px;
   padding: 19px 104px 0;
   display: flex;
   justify-content: space-between;
-  border-bottom: solid 1px rgb(196, 196, 196);
   position: relative;
+  z-index: 2;
 }
 
 @media (max-width: 1000px) {

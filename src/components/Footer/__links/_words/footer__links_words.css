@@ -1,0 +1,16 @@
+.footer__links_words {
+  width: 265px;
+}
+
+@media (max-width: 1000px) {
+  .footer__links_words {
+    width: 245px;
+  }
+}
+
+@media (max-width: 767px) {
+  .footer__links_words {
+    flex-direction: column;
+    width: 215px;
+  }
+}

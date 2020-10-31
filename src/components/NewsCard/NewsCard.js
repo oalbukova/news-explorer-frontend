@@ -4,42 +4,50 @@ import './NewsCard.css';
 import like from '../../images/like.svg'
 import likeActive from '../../images/like-active.svg'
 import likeHover from '../../images/like-hover.svg'
+import btnDel from '../../images/del.svg'
+import btnDelHover from '../../images/del-hover.svg'
+import {useLocation} from "react-router-dom";
 
 function NewsCard(props) {
-
-  const [isLiked, setIsLiked] = React.useState(false);
-  const btnActive = `${isLiked ? likeActive : like}`;
-
-  function handleLikeClick() {
-    setIsLiked(!isLiked);
-  }
-
+  const {pathname} = useLocation();
   const [isHover, setIsHover] = React.useState(false);
-  let btnHover = `${isHover ? likeHover : btnActive}`;
+  const [isLiked, setIsLiked] = React.useState(false);
+
+  const action = `${pathname === '/' ? 'Войдите, чтобы сохранять статьи' : 'Убрать из сохранённых'}`;
+  const tooltipClassName = `${pathname === '/' ? 'tooltip__text' : 'tooltip__text tooltip__text_save-news'}`;
+  const btnImg = `${pathname === '/' ? like : btnDel}`;
+  const btnImgHover = `${pathname === '/' ? likeHover : btnDelHover}`;
+  const btnHover = `${isHover ? btnImgHover : btnImg}`;
+  const btnActive = `${isLiked ? likeActive : btnHover}`;
+  const btnClick = `${pathname === '/' ? btnActive : btnHover}`;
+  const tagVisibility = `${pathname === '/' ? 'none' : 'block'}`;
 
   function handleLikeHover() {
     setIsHover(!isHover);
   }
 
+  function handleLikeClick() {
+    setIsLiked(!isLiked);
+  }
+
   return (
     <li className="card">
-      <div className="card__img" style={{backgroundImage: 'url(' + props.img + ')'}}>
-        <span className="card__tag" style={{opacity: props.visibility}}>{props.tag}</span>
+      <img className="card__img" src={props.img} alt={'Изображение ' + props.tag} />
+        <span className="card__tag" style={{display: tagVisibility}}>{props.tag}</span>
         <button className='tooltip' type="button" onClick={handleLikeClick}
                 onMouseEnter={handleLikeHover}
                 onMouseLeave={handleLikeHover}
-                style={{backgroundImage: 'url(' + btnHover + ')'}} >
-            <span className='tooltip__text'  style={{fontSize: props.size}}>{props.action}</span>
+                style={{backgroundImage: 'url(' + btnClick + ')'}}>
+          <span className={tooltipClassName}>{action}</span>
         </button>
-      </div>
-      <div className="card__caption">
+      <a className="card__caption" href={props.src} rel="noreferrer noopener">
         <div className="card__info">
-          <span className='card__date'>{props.date}</span>
+          <span className='card__date'>2 августа, 2019</span>
           <h3 className="card__title">{props.title}</h3>
           <p className="card__text">{props.text}</p>
         </div>
         <span className='card__sourse'>{props.source}</span>
-      </div>
+      </a>
     </li>
   );
 }

@@ -1,0 +1,21 @@
+.news-info__subtitle {
+  color: rgba(26, 27, 34, 0.5);
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+  margin: 0 0 30px;
+}
+
+@media (max-width: 1000px) {
+  .news-info__subtitle {
+    font-size: 14px;
+    margin: 0px 0 16px;
+  }
+}
+
+@media (max-width: 700px) {
+  .news-info__subtitle {
+    font-size: 12px;
+  }
+}

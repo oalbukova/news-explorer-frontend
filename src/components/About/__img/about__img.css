@@ -1,0 +1,32 @@
+.about__img {
+  width: 464px;
+  height: 464px;
+  border-radius: 1000px;
+  object-fit: cover;
+  object-position: center;
+  margin-right: 56px;
+}
+
+@media (max-width: 1024px) {
+  .about__img {
+    width: 300px;
+    height: 300px;
+    margin-right: 31px;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 850px) {
+  .about__img {
+    width: 232px;
+    height: 232px;
+  }
+}
+
+@media (max-width: 767px) {
+  .about__img {
+    margin: 0 auto 25px;
+    width: 272px;
+    height: 272px;
+  }
+}
