@@ -94,6 +94,22 @@ function App() {
             <SearchForm />
           </div>
           <Main />
+          <Register
+            onClose={closeAllPopups}
+            changePopup={changePopupToLogin}
+            changePopupToInfoTooltip={changePopupToInfoTooltip}
+            isOpen={isRegisterPopupOpen}
+          />
+          <Login
+            onClose={closeAllPopups}
+            changePopup={changePopupToRegister}
+            isOpen={isLoginPopupOpen}
+          />
+          <InfoTooltip
+            onClose={closeAllPopups}
+            changePopup={changePopupFromInfoTooltip}
+            isOpen={isTooltipOpen}
+          />
         </Route>
         <Route path="/saved-news">
           <Header isMobile={isMobile} changeBackground={changeBackground} />
@@ -101,22 +117,6 @@ function App() {
         </Route>
       </Switch>
       <Footer />
-      <Register
-        onClose={closeAllPopups}
-        changePopup={changePopupToLogin}
-        changePopupToInfoTooltip={changePopupToInfoTooltip}
-        isOpen={isRegisterPopupOpen}
-      />
-      <Login
-        onClose={closeAllPopups}
-        changePopup={changePopupToRegister}
-        isOpen={isLoginPopupOpen}
-      />
-      <InfoTooltip
-        onClose={closeAllPopups}
-        changePopup={changePopupFromInfoTooltip}
-        isOpen={isTooltipOpen}
-      />
     </div>
   );
 }
