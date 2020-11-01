@@ -2,7 +2,7 @@ import React from "react";
 import PopupWithForm from "../PopupWithForm/PopupWithForm";
 
 function Register(props) {
-  const { changePopup, changePopupToInfoTooltip } = props;
+  const { changePopup, changePopupToInfoTooltip, isOpen, onClose } = props;
   const emailRef = React.useRef();
   const passwordRef = React.useRef();
   const nameRef = React.useRef();
@@ -33,10 +33,13 @@ function Register(props) {
 
   React.useEffect(() => {
     setDisabled(true);
+    setName("");
+    setEmail("");
+    setPassword("");
     setRegisterEmailError("");
     setRegisterPasswordError("");
     setNameError("");
-  }, [props.isOpen]);
+  }, [isOpen]);
 
   React.useEffect(() => {
     emailValid && passwordValid && nameValid
@@ -63,8 +66,8 @@ function Register(props) {
     <PopupWithForm
       name="register"
       title="Регистрация"
-      isOpen={props.isOpen}
-      onClose={props.onClose}
+      isOpen={isOpen}
+      onClose={onClose}
       disabled={disabled}
       changePopup={changePopup}
     >

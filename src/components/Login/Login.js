@@ -27,9 +27,11 @@ function Login(props) {
 
   React.useEffect(() => {
     setDisabled(false);
+    setEmail("");
+    setPassword("");
     setLoginEmailError("");
     setLoginPasswordError("");
-  }, []);
+  }, [isOpen]);
 
   React.useEffect(() => {
     emailValid && passwordValid ? setDisabled(false) : setDisabled(true);
