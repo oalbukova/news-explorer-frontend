@@ -9,6 +9,7 @@
 
 @media (max-width: 768px) {
   .app__elem-background {
+    background-image: url(../../../images/main-tablet.jpg);
     padding-bottom: 46px;
   }
 }
@@ -18,3 +19,10 @@
     padding-bottom: 32px;
   }
 }
+
+@media (max-width: 400px) {
+  .app__elem-background {
+    background-image: url(../../../images/main-mobile.jpg);
+  }
+}
+
