@@ -1,0 +1,21 @@
+.popup__span-registration {
+  color: #000;
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+  text-decoration: none;
+  -webkit-transition: opacity linear .5s;
+  transition: opacity linear .5s;
+}
+
+.popup__span-registration:hover {
+  cursor: pointer;
+  opacity: .6;
+}
+
+@media (max-width: 768px) {
+  .popup__span-registration {
+    margin: 0;
+  }
+}

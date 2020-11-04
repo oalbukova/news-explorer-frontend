@@ -1,0 +1,24 @@
+.news-info__title {
+  width: 530px;
+  color: #1a1b22;
+  font-family: 'Roboto Slab', Arial, sans-serif;;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 46px;
+  margin: 0 0 28px;
+}
+
+@media (max-width: 1000px) {
+  .news-info__title {
+    width: 336px;
+    font-size: 30px;
+    line-height: 34px;
+    margin: 0 0 16px;
+  }
+}
+
+@media (max-width: 700px) {
+  .news-info__title {
+    width: 288px;
+  }
+}

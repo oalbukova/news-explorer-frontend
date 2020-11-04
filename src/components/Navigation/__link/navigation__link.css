@@ -1,0 +1,37 @@
+.navigation__link {
+  color: white;
+  text-decoration: none;
+  margin-left: 34px;
+  transition: opacity linear .5s;
+  z-index: 2;
+}
+
+.navigation__link:hover {
+  opacity: .6;
+}
+
+@media (max-width: 1000px) {
+  .navigation__link {
+    margin-left: 19px;
+  }
+}
+
+@media (max-width: 700px) {
+  .navigation__link {
+    margin-left: 16px;
+  }
+}
+
+@media (min-width: 700px) {
+  .navigation__link {
+    margin-top: 8px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .navigation__link {
+    margin-top: 12px;
+  }
+}
+
+

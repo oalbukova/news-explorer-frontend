@@ -1,0 +1,11 @@
+@import url(./__img/not-found-news__img.css);
+@import url(./__text/not-found-news__text.css);
+@import url(./__title/not-found-news__title.css);
+
+.not-found-news {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 80px;
+  padding-top: 22px;
+}

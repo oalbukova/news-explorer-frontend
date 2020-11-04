@@ -1,0 +1,11 @@
+.card__sourse {
+  width: 89px;
+  height: 20px;
+  color: #b6bcbf;
+  font-family: 'Roboto Slab', Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: .4px;
+  text-align: left;
+  text-transform: uppercase;
+}

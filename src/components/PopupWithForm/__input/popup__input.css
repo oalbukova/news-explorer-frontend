@@ -1,0 +1,66 @@
+.popup__input {
+  font-family: 'Inter', Arial, sans-serif;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, .2);
+  font-size: 14px;
+  line-height: 19px;
+  height: 28px;
+  margin-top: 5px;
+  color: #000;
+  font-weight: 400;
+}
+
+.popup__input:hover {
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, .3);
+}
+
+.popup__input:focus {
+  background-color: rgba(47, 113, 229, .1);
+}
+
+.popup__input::-webkit-input-placeholder {
+  opacity: .2;
+  color: #000;
+  text-indent: 0;
+  transition: text-indent .3s ease;
+}
+.popup__input::-moz-placeholder {
+  opacity: .2;
+  color: #000;
+  text-indent: 0;
+  transition: text-indent .3s ease;
+}
+
+.popup__input:-moz-placeholder {
+  opacity: .2;
+  color: #000;
+  text-indent: 0;
+  transition: text-indent .3s ease;
+}
+
+.popup__input:-ms-input-placeholder  {
+  opacity: .2;
+  color: #000;
+  text-indent: 0;
+  transition: text-indent .3s ease;
+}
+
+.popup__input:focus::-webkit-input-placeholder {
+  text-indent: 500px;
+  transition: text-indent .3s ease;
+}
+
+.popup__input:focus::-moz-placeholder{
+  text-indent: 500px;
+  transition: text-indent .3s ease;
+}
+
+.popup__input:focus:-moz-placeholder  {
+  text-indent: 500px;
+  transition: text-indent .3s ease;
+}
+
+.popup__input:-ms-input-placeholder {
+  text-indent: 500px;
+  transition: text-indent .3s ease;
+}

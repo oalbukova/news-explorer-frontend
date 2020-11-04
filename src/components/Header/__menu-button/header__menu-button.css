@@ -1,0 +1,16 @@
+.header__menu-button {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 28px;
+  right: 19px;
+  width: 16px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+@media (min-width: 700px) {
+  .header__menu-button {
+    visibility: hidden;
+  }
+}

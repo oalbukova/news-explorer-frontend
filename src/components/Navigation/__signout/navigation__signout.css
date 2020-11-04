@@ -1,0 +1,11 @@
+.navigation__signout {
+  width: 18px;
+  height: 16px;
+  margin-left: 12px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(../../../images/signout.svg);
+}
+
+

@@ -1,0 +1,35 @@
+@import url(./__copyright/footer__copyright.css);
+@import url(./__content-social/footer__content-social.css);
+@import url(./__links/footer__links.css);
+@import url(./__link/footer__link.css);
+@import url(./__icon/footer__icon.css);
+@import url(./__links/_words/footer__links_words.css);
+@import url(./__links/_social/footer__links_social.css);
+@import url(./__icon/_github/footer__icon_github.css);
+@import url(./__icon/_fb/footer__icon_fb.css);
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 13px 104px;
+}
+
+@media (max-width: 1000px) {
+  .footer {
+    padding: 6px 40px;
+  }
+}
+
+@media (max-width: 767px) {
+  .footer {
+    padding: 42px 16px;
+    flex-direction: column-reverse;
+  }
+}
+
+@media (max-width: 400px) {
+  .footer {
+    padding: 0 16px 30px;
+  }
+}
+

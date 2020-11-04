@@ -1,0 +1,28 @@
+.app__elem-background {
+  background-image: url(../../../images/background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  background-position: 50%;
+  padding-bottom: 80px;
+}
+
+@media (max-width: 768px) {
+  .app__elem-background {
+    background-image: url(../../../images/main-tablet.jpg);
+    padding-bottom: 46px;
+  }
+}
+
+@media (max-width: 500px) {
+  .app__elem-background {
+    padding-bottom: 32px;
+  }
+}
+
+@media (max-width: 400px) {
+  .app__elem-background {
+    background-image: url(../../../images/main-mobile.jpg);
+  }
+}
+

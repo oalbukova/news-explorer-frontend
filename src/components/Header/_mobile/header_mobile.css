@@ -1,0 +1,9 @@
+.header_mobile {
+  background-color: transparent;
+}
+
+@media (max-width: 700px) {
+  .header_mobile {
+    background-color: #1A1B22;
+  }
+}

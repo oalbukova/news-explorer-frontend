@@ -1,0 +1,18 @@
+@import url(./__buttons/card__buttons.css);
+@import url(./__date/card__date.css);
+@import url(./__img/card__img.css);
+@import url(./__caption/card__caption.css);
+@import url(./__tag/card__tag.css);
+@import url(./__text/card__text.css);
+@import url(./__title/card__title.css);
+@import url(./__sourse/card__sourse.css);
+@import url(./tooltip/tooltip.css);
+
+.card {
+  border-radius: 16px;
+  position: relative;
+}
+
+.card:hover{
+  box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+}
