@@ -21,7 +21,6 @@
   <component name="ChangeListManager">
     <list default="true" id="99311588-236f-4de7-a62a-034e8814eb4a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SearchForm/__input/search__input.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SearchForm/__input/search__input.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +70,8 @@
       <workItem from="1603400008865" duration="109000" />
       <workItem from="1603400130498" duration="162403000" />
       <workItem from="1603833662200" duration="10976000" />
-      <workItem from="1603848344660" duration="133439000" />
+      <workItem from="1603848344660" duration="134895000" />
+      <workItem from="1604421345839" duration="8256000" />
     </task>
     <servers />
   </component>
@@ -115,9 +115,9 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1186" height="174" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1603392059630" />
-    <state x="647" y="371" width="672" height="678" key="search.everywhere.popup" timestamp="1603408200683">
+    <state x="647" y="371" width="672" height="678" key="search.everywhere.popup" timestamp="1604438237988">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="647" y="371" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1603408200683" />
+    <state x="647" y="371" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1604438237988" />
   </component>
 </project>
