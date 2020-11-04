@@ -20,7 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99311588-236f-4de7-a62a-034e8814eb4a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +73,7 @@
       <workItem from="1603400130498" duration="162403000" />
       <workItem from="1603833662200" duration="10976000" />
       <workItem from="1603848344660" duration="134895000" />
-      <workItem from="1604421345839" duration="8256000" />
+      <workItem from="1604421345839" duration="8588000" />
     </task>
     <servers />
   </component>
