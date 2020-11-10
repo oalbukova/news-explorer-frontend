@@ -36,7 +36,7 @@ function About() {
           </li>
           <li className="about__description-item">
             Различные инструменты для разработки и отладки ПО (WebStorm, VSCode,
-            Git, Figma, Avacode, dev tools, Postman).
+            Git, Figma, Avocode, dev tools, Postman).
           </li>
           <li className="about__description-item">
             Линтинг кода при помощи ESLint и стиль синтаксиса Airbnb.

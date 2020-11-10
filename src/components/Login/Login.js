@@ -1,8 +1,9 @@
 import React from "react";
 import PopupWithForm from "../PopupWithForm/PopupWithForm";
+//import { useHistory } from "react-router-dom";
 
 function Login(props) {
-  const { changePopup, isOpen, onClose } = props;
+  const { changePopup, isOpen, onClose, registrationErr, setRegistrationErr, onLogin, isLoading } = props;
   const emailRef = React.useRef();
   const passwordRef = React.useRef();
   const [email, setEmail] = React.useState("");
@@ -12,43 +13,65 @@ function Login(props) {
   const [emailValid, setEmailValid] = React.useState(false);
   const [passwordValid, setPasswordValid] = React.useState(false);
   const [disabled, setDisabled] = React.useState(true);
+ // const history = useHistory();
 
-  function validate() {
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   if (!email || !password) {
+  //     return;
+  //   }
+  //   onLogin({email, password})
+  // };
+
+  React.useEffect(() => {
+    setDisabled(true);
+  }, [isLoading]);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onLogin({ email, password });
+  }
+
+  function validateEmail() {
     setLoginEmailError(emailRef.current.validationMessage);
-    setLoginPasswordError(passwordRef.current.validationMessage);
-
     !emailRef.current.validity.valid
       ? setEmailValid(false)
       : setEmailValid(true);
+  }
+
+  function validatePassword() {
+    setLoginPasswordError(passwordRef.current.validationMessage);
     !passwordRef.current.validity.valid
       ? setPasswordValid(false)
       : setPasswordValid(true);
   }
 
+
   React.useEffect(() => {
-    setDisabled(false);
+    setDisabled(true)
     setEmail("");
     setPassword("");
     setLoginEmailError("");
     setLoginPasswordError("");
+    setRegistrationErr("");
   }, [isOpen]);
 
   React.useEffect(() => {
     emailValid && passwordValid ? setDisabled(false) : setDisabled(true);
   }, [emailValid, passwordValid, email, password]);
-
   function handleChangeEmail(e) {
     setEmail(e.target.value);
-    validate();
+    validateEmail();
   }
 
   function handleChangePassword(e) {
     setPassword(e.target.value);
-    validate();
+    validatePassword();
   }
 
   return (
     <PopupWithForm
+      onSubmit={handleSubmit}
       name="login"
       title="Вход"
       isOpen={isOpen}
@@ -71,6 +94,7 @@ function Login(props) {
         pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
         minLength="4"
         maxLength="40"
+        disabled={props.disabled}
       />
       <span
         className={`popup__span-error ${
@@ -92,6 +116,7 @@ function Login(props) {
         value={password || ""}
         ref={passwordRef}
         onChange={handleChangePassword}
+        disabled={props.disabled}
       />
       <span
         className={`popup__span-error ${
@@ -100,6 +125,9 @@ function Login(props) {
         id="password-input-error-login"
       >
         {loginPasswordError}
+      </span>
+      <span className="popup__registration-err">
+        {registrationErr}
       </span>
       <button
         className={

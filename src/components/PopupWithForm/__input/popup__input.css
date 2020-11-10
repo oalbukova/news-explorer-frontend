@@ -18,6 +18,10 @@
   background-color: rgba(47, 113, 229, .1);
 }
 
+.popup__input:disabled {
+  color: rgba(0, 0, 0, .2);
+}
+
 .popup__input::-webkit-input-placeholder {
   opacity: .2;
   color: #000;

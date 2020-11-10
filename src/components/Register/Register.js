@@ -2,7 +2,7 @@ import React from "react";
 import PopupWithForm from "../PopupWithForm/PopupWithForm";
 
 function Register(props) {
-  const { changePopup, changePopupToInfoTooltip, isOpen, onClose } = props;
+  const { changePopup, isOpen, onClose, handleRegister, registrationErr, setRegistrationErr, isLoading } = props;
   const emailRef = React.useRef();
   const passwordRef = React.useRef();
   const nameRef = React.useRef();
@@ -17,29 +17,42 @@ function Register(props) {
   const [nameValid, setNameValid] = React.useState(false);
   const [disabled, setDisabled] = React.useState(true);
 
-  function validate() {
+  function validateEmail() {
     setRegisterEmailError(emailRef.current.validationMessage);
-    setRegisterPasswordError(passwordRef.current.validationMessage);
-    setNameError(nameRef.current.validationMessage);
-
     !emailRef.current.validity.valid
       ? setEmailValid(false)
       : setEmailValid(true);
+  }
+
+  function validatePassword() {
+    setRegisterPasswordError(passwordRef.current.validationMessage);
     !passwordRef.current.validity.valid
       ? setPasswordValid(false)
       : setPasswordValid(true);
+  }
+
+  function validateName() {
+    setNameError(nameRef.current.validationMessage);
     !nameRef.current.validity.valid ? setNameValid(false) : setNameValid(true);
   }
 
+
   React.useEffect(() => {
-    setDisabled(true);
+    setDisabled(true)
     setName("");
     setEmail("");
     setPassword("");
     setRegisterEmailError("");
     setRegisterPasswordError("");
     setNameError("");
+    setRegistrationErr("");
   }, [isOpen]);
+
+  React.useEffect(() => {
+    setDisabled(true);
+  }, [isLoading]);
+
+
 
   React.useEffect(() => {
     emailValid && passwordValid && nameValid
@@ -49,18 +62,23 @@ function Register(props) {
 
   function handleChangeEmail(e) {
     setEmail(e.target.value);
-    validate();
+    validateEmail();
   }
 
   function handleChangePassword(e) {
     setPassword(e.target.value);
-    validate();
+    validatePassword();
   }
 
   function handleChangeName(e) {
     setName(e.target.value);
-    validate();
+    validateName();
   }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    handleRegister({ email, password, name })
+  };
 
   return (
     <PopupWithForm
@@ -70,6 +88,8 @@ function Register(props) {
       onClose={onClose}
       disabled={disabled}
       changePopup={changePopup}
+      onSubmit={handleSubmit}
+    //  isLoading={isLoading}
     >
       <span className="popup__input-name" lang="en">
         Email
@@ -87,6 +107,7 @@ function Register(props) {
         pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
         minLength="4"
         maxLength="40"
+        disabled={props.disabled}
       />
       <span
         className={`popup__span-error ${
@@ -108,6 +129,7 @@ function Register(props) {
         required
         placeholder="Введите пароль"
         minLength="8"
+        disabled={props.disabled}
       />
       <span
         className={`popup__span-error ${
@@ -131,6 +153,7 @@ function Register(props) {
         minLength="2"
         maxLength="40"
         onChange={handleChangeName}
+        disabled={props.disabled}
       />
       <span
         className={`popup__span-error ${
@@ -141,7 +164,7 @@ function Register(props) {
         {nameError}
       </span>
       <span className="popup__registration-err">
-        Такой пользователь уже есть
+        {registrationErr}
       </span>
       <button
         className={
@@ -151,7 +174,6 @@ function Register(props) {
         }
         type="submit"
         disabled={props.disabled}
-        onClick={changePopupToInfoTooltip}
       >
         Зарегистрироваться
       </button>

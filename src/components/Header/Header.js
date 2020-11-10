@@ -5,7 +5,7 @@ import "./Header.css";
 
 function Header(props) {
   const { pathname } = useLocation();
-  const { isMobile, changeBackground, onLogin } = props;
+  const { isMobile, changeBackground, onLoginOpen, loggedIn, onSignOut } = props;
 
   const logoClassName = `${
     pathname === "/" ? "header__logo" : "header__logo header__logo_loggedin"
@@ -53,7 +53,7 @@ function Header(props) {
           NewsExplorer
         </NavLink>
       )}
-      <Navigation changeBackground={changeBackground} onLogin={onLogin} />
+      <Navigation changeBackground={changeBackground} onLoginOpen={onLoginOpen} loggedIn={loggedIn} onSignOut={onSignOut}/>
     </div>
   );
 }
