@@ -2,7 +2,7 @@ import React from "react";
 import PopupWithForm from "../PopupWithForm/PopupWithForm";
 
 function Register(props) {
-  const { changePopup, isOpen, onClose, handleRegister, registrationErr, setRegistrationErr, isLoading } = props;
+  const {changePopup, isOpen, onClose, handleRegister, registrationErr, setRegistrationErr} = props;
   const emailRef = React.useRef();
   const passwordRef = React.useRef();
   const nameRef = React.useRef();
@@ -49,12 +49,6 @@ function Register(props) {
   }, [isOpen]);
 
   React.useEffect(() => {
-    setDisabled(true);
-  }, [isLoading]);
-
-
-
-  React.useEffect(() => {
     emailValid && passwordValid && nameValid
       ? setDisabled(false)
       : setDisabled(true);
@@ -77,7 +71,7 @@ function Register(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    handleRegister({ email, password, name })
+    handleRegister({email, password, name})
   };
 
   return (
@@ -89,13 +83,15 @@ function Register(props) {
       disabled={disabled}
       changePopup={changePopup}
       onSubmit={handleSubmit}
-    //  isLoading={isLoading}
     >
       <span className="popup__input-name" lang="en">
         Email
       </span>
       <input
-        className="popup__input"
+        className={
+          "popup__input"
+        }
+
         id="email-register"
         name="email"
         type="email"
@@ -119,13 +115,16 @@ function Register(props) {
       </span>
       <span className="popup__input-name">Пароль</span>
       <input
+        className={
+          "popup__input"
+        }
+
         id="password-register"
         name="password"
         type="password"
         value={password || ""}
         ref={passwordRef}
         onChange={handleChangePassword}
-        className="popup__input"
         required
         placeholder="Введите пароль"
         minLength="8"
@@ -140,8 +139,11 @@ function Register(props) {
         {registerPasswordError}
       </span>
       <span className="popup__input-name">Имя</span>
+
       <input
-        className="popup__input"
+        className={
+"popup__input"
+        }
         id="name-input-register"
         type="text"
         required

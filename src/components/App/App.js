@@ -49,10 +49,12 @@ function App() {
 
   function closeRegisterPopup() {
     setIsRegisterPopupOpen(false);
+    setDisabled(false);
   }
 
   function closeLoginPopup() {
     setIsLoginPopupOpen(false);
+    setDisabled(false);
   }
 
   function closeTooltipPopup() {
@@ -126,34 +128,6 @@ function App() {
     setCurrentUser({});
   }
 
-  console.log(loggedIn)
-
-  // function tokenCheck() {
-  //   const jwt = localStorage.getItem("jwt");
-  //   if (jwt) {
-  //     getContent(jwt).then((res) => {
-  //       if (res) {
-  //         setLoggedIn(true);
-  //         setUserData({
-  //           id: res.data._id,
-  //           email: res.data.email,
-  //         });
-  //         setCurrentUser(res.data);
-  //       } else {
-  //         localStorage.removeItem("jwt");
-  //         history.push("/");
-  //       }
-  //     })
-  //       .catch((err) => {
-  //         console.log(err);
-  //       })
-  //   }
-  // }
-  //
-  // React.useEffect(() => {
-  //   tokenCheck();
-  // }, []);
-  //
   function handleRegister({email, password, name}) {
     setIsLoading(true);
     register(email, password, name)
@@ -163,71 +137,14 @@ function App() {
       })
       .catch((err) => {
         setRegistrationErr(err.message);
-      //  setDisabled(true);
+        setDisabled(true);
       })
       .finally(() => {
         setIsLoading(false);
       });
   }
 
-  // function handleLogin({email, password}) {
-  //   setIsLoading(true);
-  //   login(email, password)
-  //         .then((res) => {
-  //          if (res && res.token) {
-  //            localStorage.setItem('loggedIn', 'true');
-  //             setLoggedIn(true);
-  //          //   tokenCheck();
-  //             closeLoginPopup();
-  //           } else {
-  //             setRegistrationErr(res.message)
-  //           }
-  //         })
-  //         .catch((err) => {
-  //           console.log(err);
-  //         })
-  //         .finally(() => {
-  //           setIsLoading(false);
-  //         });
-  //     }
-
-  //     .then((data) => {
-  //       getContent(data)
-  //         .then((res) => {
-  //           setCurrentUser(res.data);
-  //         })
-  //         .catch((err) => {
-  //           console.log(err);
-  //           setRegistrationErr(err.message);
-  //         });
-  //       setLoggedIn(true);
-  //       closeLoginPopup();
-  //     })
-  //     .catch((err) => {
-  //       console.log(err.message);
-  //       setRegistrationErr(err.message);
-  //     });
-  // };
-
-
-  // function handleLogin({email, password}) {
-  //   setDisabled(true);
-  //   authorize(email, password)
-  //     .then(res => {
-  //       if (res.data) {
-  //         localStorage.setItem('loggedIn', 'true');
-  //         setCurrentUser(res.data);
-  //         setLoggedIn(true);
-  //         closeLoginPopup();
-  //       } else {
-  //         setRegistrationErr(res.message)
-  //       }
-  //     })
-  //     .catch(error => console.log(error));
-  // }
-
   function handleLogin({email, password}) {
-    setIsLoading(true);
     authorize(email, password)
       .then(data => {
         getContent(data)
@@ -236,30 +153,12 @@ function App() {
             setRegistrationErr(err.message))
         setLoggedIn(true);
         closeLoginPopup();
-        // setDisabled(true);
       })
       .catch((err) => {
         setRegistrationErr(err.message);
-     //   setDisabled(true);
+        setDisabled(true);
       })
-      .finally(() => {
-        setIsLoading(false);
-      });
   }
-
-  // React.useEffect(() => {
-  //   getContent()
-  //     .then(res => {
-  //       if (res.data && loggedIn === 'true') {
-  //         setCurrentUser(res.data);
-  //         setLoggedIn(true);
-  //       } else if (loggedIn === 'true') {
-  //         localStorage.removeItem('loggedIn');
-  //       }
-  //     })
-  //     .catch(error => console.log(error));
-  // }, []);
-
 
   const [isMobile, setIsMobile] = React.useState(false);
 
@@ -302,6 +201,7 @@ function App() {
           registrationErr={registrationErr}
           setRegistrationErr={setRegistrationErr}
           isLoading={isLoading}
+          disabled={disabled}
         />
         <Login
           onLogin={handleLogin}

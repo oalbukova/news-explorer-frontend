@@ -1,9 +1,8 @@
 import React from "react";
 import PopupWithForm from "../PopupWithForm/PopupWithForm";
-//import { useHistory } from "react-router-dom";
 
 function Login(props) {
-  const { changePopup, isOpen, onClose, registrationErr, setRegistrationErr, onLogin, isLoading } = props;
+  const { changePopup, isOpen, onClose, registrationErr, setRegistrationErr, onLogin } = props;
   const emailRef = React.useRef();
   const passwordRef = React.useRef();
   const [email, setEmail] = React.useState("");
@@ -13,19 +12,6 @@ function Login(props) {
   const [emailValid, setEmailValid] = React.useState(false);
   const [passwordValid, setPasswordValid] = React.useState(false);
   const [disabled, setDisabled] = React.useState(true);
- // const history = useHistory();
-
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   if (!email || !password) {
-  //     return;
-  //   }
-  //   onLogin({email, password})
-  // };
-
-  React.useEffect(() => {
-    setDisabled(true);
-  }, [isLoading]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
