@@ -230,7 +230,7 @@ function App() {
             //isMobile={isMobile}
             //   changeBackground={changeBackground}
             component={SavedNews}
-            onLoginOpen={openLoginPopup}
+            openLoginPopup={openLoginPopup}
           />
           <Route>
             <Redirect to="/"/>
