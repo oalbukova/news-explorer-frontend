@@ -2,7 +2,7 @@
   font-family: 'Inter', Arial, sans-serif;
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fill, 400px);
+  grid-template-columns: repeat(3,minmax(224px,1fr));
   grid-column-gap: 16px;
   grid-row-gap: 16px;
   justify-content: center;
@@ -14,7 +14,7 @@
 @media (max-width: 850px) {
   .card-list__cards {
     margin-bottom: 30px;
-    grid-template-columns: repeat(auto-fill, 224px);
+    grid-template-columns: repeat(auto-fill,minmax(224px,1fr));
     grid-column-gap: 8px;
     grid-row-gap: 8px;
   }

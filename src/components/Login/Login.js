@@ -2,7 +2,7 @@ import React from "react";
 import PopupWithForm from "../PopupWithForm/PopupWithForm";
 
 function Login(props) {
-  const { changePopup, isOpen, onClose, registrationErr, setRegistrationErr, onLogin } = props;
+  const { changePopup, isOpen, onClose, registrationErr, onLogin } = props;
   const emailRef = React.useRef();
   const passwordRef = React.useRef();
   const [email, setEmail] = React.useState("");
@@ -39,7 +39,6 @@ function Login(props) {
     setPassword("");
     setLoginEmailError("");
     setLoginPasswordError("");
-    setRegistrationErr("");
   }, [isOpen]);
 
   React.useEffect(() => {

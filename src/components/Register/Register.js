@@ -2,7 +2,7 @@ import React from "react";
 import PopupWithForm from "../PopupWithForm/PopupWithForm";
 
 function Register(props) {
-  const {changePopup, isOpen, onClose, handleRegister, registrationErr, setRegistrationErr} = props;
+  const {changePopup, isOpen, onClose, handleRegister, registrationErr} = props;
   const emailRef = React.useRef();
   const passwordRef = React.useRef();
   const nameRef = React.useRef();
@@ -45,7 +45,6 @@ function Register(props) {
     setRegisterEmailError("");
     setRegisterPasswordError("");
     setNameError("");
-    setRegistrationErr("");
   }, [isOpen]);
 
   React.useEffect(() => {
