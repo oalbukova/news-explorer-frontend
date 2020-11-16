@@ -1,7 +1,7 @@
 import React from "react";
 import {Route, Switch, Redirect, useHistory, useLocation} from "react-router-dom";
 import {CurrentUserContext} from "../../contexts/CurrentUserContext";
-import { NewsContext } from '../../contexts/NewsContext';
+import {NewsContext} from '../../contexts/NewsContext';
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute"; // импортируем HOC
 import Header from "../Header/Header";
 import SearchForm from "../SearchForm/SearchForm";
@@ -16,6 +16,7 @@ import * as newsApi from "../../utils/NewsApi";
 import "./App.css";
 
 function App() {
+  const escape = require('escape-html');
   const [isRegisterPopupOpen, setIsRegisterPopupOpen] = React.useState(false);
   const [isLoginPopupOpen, setIsLoginPopupOpen] = React.useState(false);
   const [isTooltipOpen, setIsTooltipOpen] = React.useState(false);
@@ -24,16 +25,18 @@ function App() {
   const [news, setNews] = React.useState([]);
   const [savedNews, setSavedNews] = React.useState([]);
   const [currentRow, setCurrentRow] = React.useState(0);
-  const [isSearchErr, setSearchErr] = React.useState(false);
+  const [searchErr, setSearchErr] = React.useState('');
   const [isSearchOk, setSearchOk] = React.useState(false);
   // const [cardDelete, setCardDelete] = React.useState([]);
-  const [isLoading, setIsLoading] = React.useState();
+  const [isLoading, setIsLoading] = React.useState(false);
   const [loggedIn, setLoggedIn] = React.useState(false);
   const [currentUser, setCurrentUser] = React.useState({});
 //  const [loginState, setLoginState] = React.useState(false);
   const [disabled, setDisabled] = React.useState(false);
   const [isMobile, setIsMobile] = React.useState(false);
   const [registrationErr, setRegistrationErr] = React.useState('');
+  // const [searchErr, setSearchQuery] = React.useState('');
+  // const [searchErr, setSearchErr] = React.useState('');
   const history = useHistory();
   const {pathname} = useLocation();
 
@@ -43,10 +46,12 @@ function App() {
 
   function openRegisterPopup() {
     setIsRegisterPopupOpen(true);
+    setDisabled(false);
   }
 
   function openLoginPopup() {
     setIsLoginPopupOpen(true);
+    setDisabled(false);
   }
 
   function openTooltipPopup() {
@@ -56,13 +61,11 @@ function App() {
   function closeRegisterPopup() {
     setIsRegisterPopupOpen(false);
     setRegistrationErr("");
-    setDisabled(false);
   }
 
   function closeLoginPopup() {
     setIsLoginPopupOpen(false);
     setRegistrationErr("");
-    setDisabled(false);
   }
 
   function closeTooltipPopup() {
@@ -150,7 +153,7 @@ function App() {
   }
 
   function handleRegister({email, password, name}) {
-    mainApi.register(email, password, name)
+    mainApi.register(email, escape(password), name)
       .then((res) => {
         changePopupToInfoTooltip();
       })
@@ -161,7 +164,7 @@ function App() {
   }
 
   function handleLogin({email, password}) {
-    mainApi.authorize(email, password)
+    mainApi.authorize(email, escape(password))
       .then(data => {
         mainApi.getContent(data)
           .then((res) => setCurrentUser(res.data))
@@ -183,9 +186,9 @@ function App() {
       .catch(err => console.log(`Ошибка при загрузке сохранённых новостей: ${err.message}`));
   };
 
-  function handleSearchNews(keyword, setErrMsg) {
+  function handleSearchNews(keyword) {
     if (!keyword) {
-      setErrMsg('Нужно ввести ключевое слово');
+      setSearchErr('Нужно ввести ключевое слово');
       return;
     }
     setIsLoading(true);
@@ -195,15 +198,15 @@ function App() {
     newsApi
       .getNews(keyword)
       .then((res) => {
-        const news = res.articles.map((item) => ({ ...item, keyword }));
+        const news = res.articles.map((item) => ({...item, keyword}));
         setNews(news);
         localStorage.setItem('news', JSON.stringify(news));
         setSearchOk(true);
-        setSearchErr(false);
+        //setSearchErr(false);
       })
       .catch((err) => {
         console.log(`Ошибка при загрузке новостей: ${err}`);
-        setSearchErr(true);
+   //     setSearchErr('Нужно ввести ключевое слово');
       })
       .finally(() => setIsLoading(false));
   };
@@ -234,81 +237,85 @@ function App() {
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
-      <NewsContext.Provider value={{ news, savedNews }}>
-      <div className="app">
-        {pathname === '/' ? (
-            <>
-              <div className={overlay}></div>
-              <div className="app__elem-background">
-                <Header
-                  onLoginOpen={openLoginPopup}
-                  changeBackground={changeBackground}
-                  isMobile={isMobile}
-                  onSignOut={signOut}
-                  loggedIn={loggedIn}
-                />
-                <SearchForm
-                  onSearch={handleSearchNews}
-                  isLoading={isLoading}/>
-              </div>
-            </>
-          ) :
-          <Header
-            isMobile={isMobile}
-            onSignOut={signOut}
-            loggedIn={loggedIn}
-            changeBackground={changeBackground}
-          />
-        }
-        <Register
-          onClose={closeRegisterPopup}
-          isOpen={isRegisterPopupOpen}
-          changePopup={changePopupToLogin}
-          changePopupToInfoTooltip={changePopupToInfoTooltip}
-          handleRegister={handleRegister}
-          registrationErr={registrationErr}
-          setRegistrationErr={setRegistrationErr}
-          disabled={disabled}
-        />
-        <Login
-          onClose={closeLoginPopup}
-          isOpen={isLoginPopupOpen}
-          changePopup={changePopupToRegister}
-          onLogin={handleLogin}
-          registrationErr={registrationErr}
-          setRegistrationErr={setRegistrationErr}
-          disabled={disabled}
-        />
-        <InfoTooltip
-          onClose={closeTooltipPopup}
-          changePopup={changePopupFromInfoTooltip}
-          isOpen={isTooltipOpen}
-        />
-        <Switch>
-          <Route exact path="/" onRegister={openRegisterPopup}>
-            <Main
-              onSearch={handleSearchNews}
+      <NewsContext.Provider value={{news, savedNews}}>
+        <div className="app">
+          {pathname === '/' ? (
+              <>
+                <div className={overlay}></div>
+                <div className="app__elem-background">
+                  <Header
+                    onLoginOpen={openLoginPopup}
+                    changeBackground={changeBackground}
+                    isMobile={isMobile}
+                    onSignOut={signOut}
+                    loggedIn={loggedIn}
+                  />
+                  <SearchForm
+                 //   disabled={disabled}
+                 //   setDisabled={setDisabled}
+                    onSearch={handleSearchNews}
+                    isLoading={isLoading}
+                   searchErr={searchErr}
+                  />
+                </div>
+              </>
+            ) :
+            <Header
+              isMobile={isMobile}
+              onSignOut={signOut}
               loggedIn={loggedIn}
-              isLoading={isLoading}
-              isErr={isSearchErr}
-              onCardClick={handleArticleClick}
-              onShowMore={handleShowMore}
-              isSearchOk={isSearchOk}
-              currentRow={currentRow} />
-          </Route>
-          <ProtectedRoute
-            path="/saved-news"
-            onCardClick={handleDeleteArticle}
-            loggedIn={loggedIn}
-            component={SavedNews}
-            openLoginPopup={openLoginPopup}
+              changeBackground={changeBackground}
+            />
+          }
+          <Register
+            onClose={closeRegisterPopup}
+            isOpen={isRegisterPopupOpen}
+            changePopup={changePopupToLogin}
+            changePopupToInfoTooltip={changePopupToInfoTooltip}
+            handleRegister={handleRegister}
+            registrationErr={registrationErr}
+            setRegistrationErr={setRegistrationErr}
+            disabled={disabled}
           />
-          <Route>
-            <Redirect to="/"/>
-          </Route>
-        </Switch>
-        <Footer/>
-      </div>
+          <Login
+            onClose={closeLoginPopup}
+            isOpen={isLoginPopupOpen}
+            changePopup={changePopupToRegister}
+            onLogin={handleLogin}
+            registrationErr={registrationErr}
+            setRegistrationErr={setRegistrationErr}
+            disabled={disabled}
+          />
+          <InfoTooltip
+            onClose={closeTooltipPopup}
+            changePopup={changePopupFromInfoTooltip}
+            isOpen={isTooltipOpen}
+          />
+          <Switch>
+            <Route exact path="/" onRegister={openRegisterPopup}>
+              <Main
+                onSearch={handleSearchNews}
+                loggedIn={loggedIn}
+                isLoading={isLoading}
+               // isErr={isSearchErr}
+                onCardClick={handleArticleClick}
+                onShowMore={handleShowMore}
+                isSearchOk={isSearchOk}
+                currentRow={currentRow}/>
+            </Route>
+            <ProtectedRoute
+              path="/saved-news"
+              onCardClick={handleDeleteArticle}
+              loggedIn={loggedIn}
+              component={SavedNews}
+              openLoginPopup={openLoginPopup}
+            />
+            <Route>
+              <Redirect to="/"/>
+            </Route>
+          </Switch>
+          <Footer/>
+        </div>
       </NewsContext.Provider>
     </CurrentUserContext.Provider>
   );

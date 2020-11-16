@@ -1,15 +1,22 @@
 import React from "react";
-import {useFormWithValidation} from "../../utils/useFormWithValidation";
 import "./SearchForm.css";
 
 function SearchForm(props) {
-  const { onSearch, isLoading, onChange, value } = props;
-  const searchField = useFormWithValidation();
+  const {isLoading, onSearch, disabled, searchErr, setDisabled} = props;
+
+  const keyword = React.useRef();
+
   function handleSubmit(evt) {
-    const { value, setErrMsg } = searchField;
     evt.preventDefault();
-    onSearch(value, setErrMsg);
-  };
+    onSearch(keyword.current.value);
+  }
+
+  React.useEffect(() => {
+    const localKeyword = localStorage.getItem('keyword');
+    if (localKeyword) {
+      keyword.current.value = localKeyword;
+    }
+  })
 
   return (
     <section className="search">
@@ -18,26 +25,24 @@ function SearchForm(props) {
         Находите самые свежие статьи на любую тему и сохраняйте в своём личном
         кабинете.
       </p>
-      <form className="search__form" method="get" action="#" onSubmit={handleSubmit}>
+      <form className="search__form" method="get" action="#" onSubmit={handleSubmit} >
         <input
           className="search__input"
           id="search-input"
           type="text"
-          required
-          value={value || ""}
-          onChange={onChange}
-          {...searchField}
+          ref={keyword}
           placeholder="Введите тему новости"
           name="search"
-          pattern="[A-Za-zА-Яа-яЁё -]*"
-          minLength="2"
-          maxLength="50"
           disabled={isLoading}
+          //required
         />
         <button className="search__button" type="submit" disabled={isLoading}>
           Искать
         </button>
       </form>
+      <span
+        className="search__span-error"
+      >{searchErr}</span>
     </section>
   );
 }

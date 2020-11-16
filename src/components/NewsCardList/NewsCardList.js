@@ -15,7 +15,7 @@ function NewsCardList(props) {
     onCardClick,
     currentNews,
     isSearchOk,
-    isErr
+    searchErr
   } = props;
 
   return (
@@ -45,7 +45,7 @@ function NewsCardList(props) {
         />
       }
       {
-        isErr && <NotFoundNews
+        searchErr && <NotFoundNews
           title='Во время запроса произошла ошибка.'
           text='Возможно, проблема с соединением или сервер недоступен.
               Подождите немного и попробуйте ещё раз'

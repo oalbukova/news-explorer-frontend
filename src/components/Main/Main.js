@@ -10,12 +10,12 @@ function Main(props) {
   const {
     currentRow,
     isLoading,
-    onSearch,
+   // onSearch,
     loggedIn,
     onCardClick,
     onShowMore,
     isSearchOk,
-    isErr
+   // isErr
   } = props;
   const {news, savedNews} = React.useContext(NewsContext);
   const currentNews = news.slice(0, (currentRow + 1) * NEWS_IN_ROW);
