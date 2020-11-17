@@ -2,7 +2,7 @@ import React from "react";
 import PopupWithForm from "../PopupWithForm/PopupWithForm";
 
 function Login(props) {
-  const { changePopup, isOpen, onClose, registrationErr, onLogin } = props;
+  const {changePopup, isOpen, onClose, registrationErr, onLogin, isLoading} = props;
   const emailRef = React.useRef();
   const passwordRef = React.useRef();
   const [email, setEmail] = React.useState("");
@@ -15,23 +15,22 @@ function Login(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onLogin({ email, password });
+    if (!email || !password) {
+      return;
+    }
+    onLogin({email, password});
   }
 
-  function validateEmail() {
+  function validate() {
     setLoginEmailError(emailRef.current.validationMessage);
+    setLoginPasswordError(passwordRef.current.validationMessage);
     !emailRef.current.validity.valid
       ? setEmailValid(false)
       : setEmailValid(true);
-  }
-
-  function validatePassword() {
-    setLoginPasswordError(passwordRef.current.validationMessage);
     !passwordRef.current.validity.valid
       ? setPasswordValid(false)
       : setPasswordValid(true);
   }
-
 
   React.useEffect(() => {
     setDisabled(true)
@@ -44,14 +43,15 @@ function Login(props) {
   React.useEffect(() => {
     emailValid && passwordValid ? setDisabled(false) : setDisabled(true);
   }, [emailValid, passwordValid, email, password]);
+
   function handleChangeEmail(e) {
     setEmail(e.target.value);
-    validateEmail();
+    validate();
   }
 
   function handleChangePassword(e) {
     setPassword(e.target.value);
-    validatePassword();
+    validate();
   }
 
   return (
@@ -61,7 +61,6 @@ function Login(props) {
       title="Вход"
       isOpen={isOpen}
       onClose={onClose}
-      disabled={disabled}
     >
       <span className="popup__input-name" lang="en">
         Email
@@ -79,7 +78,7 @@ function Login(props) {
         pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
         minLength="4"
         maxLength="40"
-        disabled={props.disabled}
+        disabled={isLoading}
       />
       <span
         className={`popup__span-error ${
@@ -101,7 +100,7 @@ function Login(props) {
         value={password || ""}
         ref={passwordRef}
         onChange={handleChangePassword}
-        disabled={props.disabled}
+        disabled={isLoading}
       />
       <span
         className={`popup__span-error ${
@@ -121,7 +120,7 @@ function Login(props) {
             : "popup__button-save popup__button-save_type_disabled"
         }
         type="submit"
-        disabled={props.disabled}
+        disabled={isLoading}
       >
         Войти
       </button>

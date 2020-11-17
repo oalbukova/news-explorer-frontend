@@ -2,7 +2,7 @@ import React from "react";
 import PopupWithForm from "../PopupWithForm/PopupWithForm";
 
 function Register(props) {
-  const {changePopup, isOpen, onClose, handleRegister, registrationErr} = props;
+  const {changePopup, isOpen, onClose, handleRegister, registrationErr, isLoading} = props;
   const emailRef = React.useRef();
   const passwordRef = React.useRef();
   const nameRef = React.useRef();
@@ -17,25 +17,18 @@ function Register(props) {
   const [nameValid, setNameValid] = React.useState(false);
   const [disabled, setDisabled] = React.useState(true);
 
-  function validateEmail() {
+  function validate() {
     setRegisterEmailError(emailRef.current.validationMessage);
+    setRegisterPasswordError(passwordRef.current.validationMessage);
+    setNameError(nameRef.current.validationMessage);
     !emailRef.current.validity.valid
       ? setEmailValid(false)
       : setEmailValid(true);
-  }
-
-  function validatePassword() {
-    setRegisterPasswordError(passwordRef.current.validationMessage);
     !passwordRef.current.validity.valid
       ? setPasswordValid(false)
       : setPasswordValid(true);
-  }
-
-  function validateName() {
-    setNameError(nameRef.current.validationMessage);
     !nameRef.current.validity.valid ? setNameValid(false) : setNameValid(true);
   }
-
 
   React.useEffect(() => {
     setDisabled(true)
@@ -55,17 +48,17 @@ function Register(props) {
 
   function handleChangeEmail(e) {
     setEmail(e.target.value);
-    validateEmail();
+    validate();
   }
 
   function handleChangePassword(e) {
     setPassword(e.target.value);
-    validatePassword();
+    validate();
   }
 
   function handleChangeName(e) {
     setName(e.target.value);
-    validateName();
+    validate();
   }
 
   const handleSubmit = (e) => {
@@ -79,7 +72,6 @@ function Register(props) {
       title="Регистрация"
       isOpen={isOpen}
       onClose={onClose}
-      disabled={disabled}
       changePopup={changePopup}
       onSubmit={handleSubmit}
     >
@@ -90,7 +82,6 @@ function Register(props) {
         className={
           "popup__input"
         }
-
         id="email-register"
         name="email"
         type="email"
@@ -102,7 +93,7 @@ function Register(props) {
         pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
         minLength="4"
         maxLength="40"
-        disabled={props.disabled}
+        disabled={isLoading}
       />
       <span
         className={`popup__span-error ${
@@ -117,7 +108,6 @@ function Register(props) {
         className={
           "popup__input"
         }
-
         id="password-register"
         name="password"
         type="password"
@@ -127,7 +117,7 @@ function Register(props) {
         required
         placeholder="Введите пароль"
         minLength="8"
-        disabled={props.disabled}
+        disabled={isLoading}
       />
       <span
         className={`popup__span-error ${
@@ -138,10 +128,9 @@ function Register(props) {
         {registerPasswordError}
       </span>
       <span className="popup__input-name">Имя</span>
-
       <input
         className={
-"popup__input"
+          "popup__input"
         }
         id="name-input-register"
         type="text"
@@ -154,7 +143,7 @@ function Register(props) {
         minLength="2"
         maxLength="40"
         onChange={handleChangeName}
-        disabled={props.disabled}
+        disabled={isLoading}
       />
       <span
         className={`popup__span-error ${
@@ -174,7 +163,7 @@ function Register(props) {
             : "popup__button-save popup__button-save_type_disabled"
         }
         type="submit"
-        disabled={props.disabled}
+        disabled={isLoading}
       >
         Зарегистрироваться
       </button>

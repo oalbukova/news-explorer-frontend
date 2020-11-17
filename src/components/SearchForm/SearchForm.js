@@ -2,7 +2,7 @@ import React from "react";
 import "./SearchForm.css";
 
 function SearchForm(props) {
-  const {isLoading, onSearch, disabled, searchErr, setDisabled} = props;
+  const {isLoading, onSearch, searchErr, clearSearchErr} = props;
 
   const keyword = React.useRef();
 
@@ -25,7 +25,7 @@ function SearchForm(props) {
         Находите самые свежие статьи на любую тему и сохраняйте в своём личном
         кабинете.
       </p>
-      <form className="search__form" method="get" action="#" onSubmit={handleSubmit} >
+      <form className="search__form" method="get" action="#" onSubmit={handleSubmit}>
         <input
           className="search__input"
           id="search-input"
@@ -34,6 +34,7 @@ function SearchForm(props) {
           placeholder="Введите тему новости"
           name="search"
           disabled={isLoading}
+          onChange={clearSearchErr}
           //required
         />
         <button className="search__button" type="submit" disabled={isLoading}>

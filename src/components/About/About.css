@@ -5,7 +5,7 @@
 
 .about {
   display: flex;
-  padding: 86px 104px 55px;
+  padding: 80px 104px 55px;
 }
 
 @media (max-width: 1000px) {

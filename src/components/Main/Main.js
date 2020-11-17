@@ -1,41 +1,67 @@
 import React from "react";
-import {NewsContext} from "../../contexts/NewsContext";
-import {NEWS_IN_ROW} from "../../utils/config"
 import NewsCardList from "../NewsCardList/NewsCardList";
-import NewsCard from "../NewsCard/NewsCard";
 import Preloader from "../Preloader/Preloader";
+import NotFoundNews from "../NotFoundNews/NotFoundNews";
 import About from "../About/About";
+import { NewsContext } from "../../contexts/NewsContext";
+import { NEWS_IN_ROW } from "../../utils/config";
+import "./Main.css";
 
-function Main(props) {
+export default function Main(props) {
   const {
-    currentRow,
-    isLoading,
-   // onSearch,
     loggedIn,
+    isLoading,
     onCardClick,
     onShowMore,
     isSearchOk,
-   // isErr
+    currentRow,
+    isErr,
   } = props;
-  const {news, savedNews} = React.useContext(NewsContext);
-  const currentNews = news.slice(0, (currentRow + 1) * NEWS_IN_ROW);
+
+  const { news, savedNews } = React.useContext(NewsContext);
+  const newsToRender = news.slice(0, (currentRow + 1) * NEWS_IN_ROW);
 
   return (
     <div className="main">
-      {isLoading ? (<Preloader/>) :
-        <NewsCardList
-          isSearchOk={isSearchOk}
-          currentNews={currentNews}
-          loggedIn={loggedIn}
-          savedNews={savedNews}
-          onCardClick={onCardClick}
-          currentRow={currentRow}
-          onShowMore={onShowMore}
+      {isLoading && <Preloader />}
+      {isSearchOk && (
+        <section className="main__card-list">
+          {newsToRender.length ? (
+            <>
+              <h2 className="main__card-title">Результаты поиска</h2>
+              <NewsCardList
+                newsToRender={newsToRender}
+                loggedIn={loggedIn}
+                savedNews={savedNews}
+                onCardClick={onCardClick}
+                currentRow={currentRow}
+              />
+              {newsToRender.length !== news.length && (
+                <button
+                  className="main__btn"
+                  type="button"
+                  onClick={onShowMore}
+                >
+                  Показать еще
+                </button>
+              )}
+            </>
+          ) : (
+            <NotFoundNews
+              title="Ничего не найдено"
+              text="К сожалению по вашему запросу ничего не найдено."
+            />
+          )}
+        </section>
+      )}
+      {isErr && (
+        <NotFoundNews
+          title="Во время запроса произошла ошибка."
+          text="Возможно, проблема с соединением или сервер недоступен.
+              Подождите немного и попробуйте ещё раз"
         />
-      }
-      <About/>
+      )}
+      <About />
     </div>
   );
 }
-
-export default Main;

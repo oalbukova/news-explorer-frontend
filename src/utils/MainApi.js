@@ -1,48 +1,51 @@
-import {BASE_URL} from './config';
+import { BASE_URL } from "./config";
 
 export const register = (email, password, name) => {
   return fetch(`${BASE_URL}/signup`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      'Access-Control-Allow-Credentials': true,
+      "Access-Control-Allow-Credentials": true,
     },
-    body: JSON.stringify({email, password, name}),
+    body: JSON.stringify({ email, password, name }),
   })
     .then((res) => {
       if (!res.ok) {
-        return res.json()
-          .then((err) => {
-            if (err.error) {
-              throw new Error(err.error);
-            } else {
-              throw new Error(err.message);
-            }
-          });
+        return res.json().then((res) => {
+          if (res.statusCode === 400 && res.validation) {
+            return res.validation.body;
+          } else if (res.message || res.data) {
+            return res;
+          }
+        });
       }
       return res.json();
+    })
+    .catch((err) => {
+      console.log(err);
+      return Promise.reject(err);
     });
-}
+};
 
 export const authorize = (email, password) => {
   return fetch(`${BASE_URL}/signin`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      'Access-Control-Allow-Credentials': true,
+      "Access-Control-Allow-Credentials": true,
     },
-    credentials: 'include',
-    body: JSON.stringify({email, password}),
+    credentials: "include",
+    body: JSON.stringify({ email, password }),
   })
     .then((res) => {
       if (res.status === 200) {
         return res.json();
       }
       if (res.status === 400) {
-        throw new Error("Не передано одно из полей");
+        throw new Error("Введите валидный email-адрес");
       }
       if (res.status === 401) {
-        throw new Error("Пользователь с email не найден");
+        throw new Error("Неправильные почта или пароль");
       }
     })
     .then((data) => {
@@ -86,31 +89,36 @@ export const getContent = (token) => {
     });
 };
 
-export const getArticles = () => {
+export const getSavedNews = () => {
   return fetch(`${BASE_URL}/articles`, {
-    method: 'GET',
+    method: "GET",
     headers: {
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${localStorage.getItem('jwt')}`
-    }
-  })
-    .then(res => {
-      if (res.ok) {
-        return res.json();
-      }
-      return Promise.reject(`Ошибка: ${res.status}`); // если ошибка, отклоняем промис
-    });
-}
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${localStorage.getItem("jwt")}`,
+    },
+  }).then((res) => {
+    return res.json();
+    //  return Promise.reject(`Ошибка: ${res.status}`); // если ошибка, отклоняем промис
+  });
+};
 
 export const saveArticle = (article) => {
-  const {keyword, title, description, publishedAt, source, url, urlToImage} = article;
+  const {
+    keyword,
+    title,
+    description,
+    publishedAt,
+    source,
+    url,
+    urlToImage,
+  } = article;
   return fetch(`${BASE_URL}/articles`, {
-    method: 'POST',
+    method: "POST",
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': `Bearer ${localStorage.getItem('jwt')}`,
+      Authorization: `Bearer ${localStorage.getItem("jwt")}`,
     },
-    credentials: 'include',
+    credentials: "include",
     body: JSON.stringify({
       keyword,
       title,
@@ -118,29 +126,29 @@ export const saveArticle = (article) => {
       publishedAt,
       source: source.name,
       url,
-      urlToImage
-    })
-  })
-    .then(res => {
-      if (res.ok) {
-        return res.json();
-      }
-      return Promise.reject(`Ошибка: ${res.status}`);
-    });
-}
+      urlToImage,
+    }),
+  }).then((res) => {
+    //    if (res.ok) {
+    return res.json();
+    //    }
+    // return Promise.reject(`Ошибка: ${res.status}`);
+  });
+};
 
 export const deleteArticle = (id) => {
   return fetch(`${BASE_URL}/articles/${id}`, {
-    method: 'DELETE',
+    method: "DELETE",
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': `Bearer ${localStorage.getItem('jwt')}`,
+      Authorization: `Bearer ${localStorage.getItem("jwt")}`,
     },
-  })
-    .then((res) => {
-      if (res.ok) {
-        return res.json();
-      }
-      return Promise.reject(`error${res.status}`);
-    });
+  });
+  // .then((res) => {
+  //   if (res.ok) {
+  //     return res.json();
+  //   }
+  //   return Promise.reject(`error${res.status}`);
+  // });
 };
+
