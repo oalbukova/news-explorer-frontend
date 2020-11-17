@@ -42,7 +42,7 @@ function NewsCard(props) {
   const btnImg = `${pathname === "/" ? like : btnDel}`;
   const btnImgHover = `${pathname === "/" ? likeHover : btnDelHover}`;
   const btnHover = `${isHover ? btnImgHover : btnImg}`;
-  const btnActive = `${isClicked ? likeActive : btnHover}`;
+  const btnActive = `${isClicked && loggedIn || isSaved ? likeActive : btnHover}`;
   const btnClick = `${pathname === "/" ? btnActive : btnHover}`;
 
   function handleLikeHover() {

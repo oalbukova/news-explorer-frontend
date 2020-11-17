@@ -1,14 +1,14 @@
 import React from "react";
 import {CurrentUserContext} from "../../contexts/CurrentUserContext";
-import { NewsContext } from '../../contexts/NewsContext';
-import { articlesDeclension, numberDeclension, adjectiveDeclination } from '../../utils/config';
+import {NewsContext} from '../../contexts/NewsContext';
+import {getSavedArticlesText, getKeywordsText} from '../../utils/utils'
 
 import "./SavedNewsHeader.css";
 
 function SavedNewsHeader(props) {
   const currentUser = React.useContext(CurrentUserContext);
-  const { savedNews } = React.useContext(NewsContext);
-  const { loggedIn } = props;
+  const {savedNews} = React.useContext(NewsContext);
+  const {loggedIn} = props;
 
   const keywords = loggedIn ? savedNews.map(item => item.keyword) : [];
 
@@ -25,22 +25,25 @@ function SavedNewsHeader(props) {
   const keywordsToRender = keywordsSorted.length <= 3
     ? keywordsSorted.join(', ')
     : `${keywordsSorted
-      .slice(0, 3)
+      .slice(0, 2)
       .join(', ')} и ${keywordsSorted
-      .slice(3)
-      .length}-${numberDeclension(keywordsSorted)} ${adjectiveDeclination(keywordsSorted)}`;
+      .slice(2)
+      .length}${getKeywordsText(keywordsSorted.length-2)}`;
 
 
   return (
     <section className="news-info">
       <p className="news-info__subtitle">Сохранённые статьи</p>
-      <h3 className="news-info__title">{currentUser.name}, у вас {savedNews.length} сохранённых {articlesDeclension(savedNews)}</h3>
-      <p className="news-info__key">
-        По ключевым словам:&nbsp;
-        <span className="news-info__key_bold">
+      <h3 className="news-info__title">{currentUser.name}, у
+        вас {savedNews.length} {getSavedArticlesText(savedNews.length)}</h3>
+      {(savedNews.length > 0) ?
+        <p className="news-info__key">
+          По ключевым словам:&nbsp;
+          <span className="news-info__key_bold">
           {keywordsToRender}
         </span>
-      </p>
+        </p>
+        : null}
     </section>
   );
 }
