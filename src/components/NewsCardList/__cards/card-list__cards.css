@@ -6,8 +6,9 @@
   grid-row-gap: 16px;
   justify-content: center;
   list-style-type: none;
-  padding: 47px 104px 46px;
+  padding: 64px 104px 64px;
   background-color: #f5f6f7;
+  margin: 0;
 }
 
 @media (max-width: 1000px) {
@@ -22,7 +23,7 @@
     grid-template-columns: repeat(auto-fill,minmax(224px,1fr));
     grid-column-gap: 8px;
     grid-row-gap: 8px;
-    padding: 18px 40px 0;
+    padding: 33px 40px 0;
   }
 }
 
@@ -37,7 +38,7 @@
     margin-bottom: 14px;
     grid-template-columns: repeat(auto-fill, 288px);
     grid-row-gap: 8px;
-    padding: 10px 16px 0;
+    padding: 26px 16px 26px;
   }
 }
 

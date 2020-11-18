@@ -20,7 +20,7 @@
   .main__card-title {
     font-size: 30px;
     line-height: 34px;
-    margin: 24px 40px 15px;
+    padding: 42px 40px 0;
   }
 }
 
@@ -32,7 +32,7 @@
 
 @media (max-width: 480px) {
   .main__card-title {
-    margin: 26px 16px 7px;
+    padding: 34px 16px 15px;
   }
 }
 

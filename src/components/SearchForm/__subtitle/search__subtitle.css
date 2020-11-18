@@ -14,7 +14,7 @@
 }
 
 @media (max-width: 500px) {
-  .search__subtitle  {
-    margin: 17px 0 105px;
+  .search__subtitle {
+    margin: 3px 0 105px;
   }
 }

@@ -164,6 +164,7 @@ function App() {
       .getNews(keyword)
       .then((res) => {
         const news = res.articles.map((item) => ({...item, keyword}));
+        console.log(news)
         setNews(news);
         localStorage.setItem("news", JSON.stringify(news));
         setSearchOk(true);
@@ -220,7 +221,8 @@ function App() {
   }
 
   function handleArticleClick(article) {
-    if (!loggedIn) return setIsRegisterPopupOpen(true);
+    if (!loggedIn) return openRegisterPopup();
+    if (article.urlToImage === null) return;
     const saved = savedNews.find(
       (i) => i.publishedAt === article.publishedAt && i.title === article.title
     );

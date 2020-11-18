@@ -1,0 +1,7 @@
+.tooltip_trash {
+  background-image: url('../../../../images/del.svg');
+}
+
+.tooltip_trash:hover {
+  background-image: url('../../../../images/del-hover.svg');
+}
