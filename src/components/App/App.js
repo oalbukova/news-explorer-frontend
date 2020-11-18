@@ -6,8 +6,8 @@ import {
   useHistory,
   useLocation,
 } from "react-router-dom";
-import { CurrentUserContext } from "../../contexts/CurrentUserContext";
-import { NewsContext } from "../../contexts/NewsContext";
+import {CurrentUserContext} from "../../contexts/CurrentUserContext";
+import {NewsContext} from "../../contexts/NewsContext";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute"; // импортируем HOC
 import Header from "../Header/Header";
 import SearchForm from "../SearchForm/SearchForm";
@@ -26,29 +26,19 @@ function App() {
   const [isRegisterPopupOpen, setIsRegisterPopupOpen] = React.useState(false);
   const [isLoginPopupOpen, setIsLoginPopupOpen] = React.useState(false);
   const [isTooltipOpen, setIsTooltipOpen] = React.useState(false);
-
-  //  const [selectedCard, setSelectedCard] = React.useState(false);
   const [news, setNews] = React.useState([]);
   const [savedNews, setSavedNews] = React.useState([]);
   const [currentRow, setCurrentRow] = React.useState(0);
   const [searchErr, setSearchErr] = React.useState("");
   const [isSearchOk, setSearchOk] = React.useState(false);
-  // const [cardDelete, setCardDelete] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(false);
   const [loggedIn, setLoggedIn] = React.useState(false);
   const [currentUser, setCurrentUser] = React.useState({});
-  //  const [loginState, setLoginState] = React.useState(false);
-  // const [disabled, setDisabled] = React.useState(false);
   const [isMobile, setIsMobile] = React.useState(false);
   const [registrationErr, setRegistrationErr] = React.useState("");
-  // const [searchErr, setSearchQuery] = React.useState('');
-  // const [searchErr, setSearchErr] = React.useState('');
-  const history = useHistory();
-  const { pathname } = useLocation();
 
-  // function handleLoginState(state) {
-  //   setLoginState(state);
-  // }
+  const history = useHistory();
+  const {pathname} = useLocation();
 
   function clearSearchErr() {
     setSearchErr("");
@@ -173,20 +163,18 @@ function App() {
     newsApi
       .getNews(keyword)
       .then((res) => {
-        const news = res.articles.map((item) => ({ ...item, keyword }));
+        const news = res.articles.map((item) => ({...item, keyword}));
         setNews(news);
         localStorage.setItem("news", JSON.stringify(news));
         setSearchOk(true);
-        //  setSearchErr(false);
       })
       .catch((err) => {
         console.log(`Ошибка при загрузке новостей: ${err}`);
-        //  setSearchErr(true);
       })
       .finally(() => setIsLoading(false));
   }
 
-  function handleRegister({ email, password, name }) {
+  function handleRegister({email, password, name}) {
     setIsLoading(true);
     mainApi
       .register(email, escape(password), name)
@@ -203,7 +191,7 @@ function App() {
       .finally(() => setIsLoading(false));
   }
 
-  function handleLogin({ email, password }) {
+  function handleLogin({email, password}) {
     setIsLoading(true);
     mainApi
       .authorize(email, escape(password))
@@ -222,23 +210,6 @@ function App() {
       .finally(() => setIsLoading(false));
   }
 
-  // function handleLogin({email, password}) {
-  //   setIsLoading(true);
-  //   mainApi.authorize(email, escape(password))
-  //     .then(data => {
-  //       if (res.data) {
-  //         localStorage.setItem('loggedIn', 'true');
-  //         setCurrentUser(res.data);
-  //         setLoggedIn(true);
-  //         closeLoginPopup();
-  //       } else {
-  //         setRegistrationErr(res.message);
-  //         setDisabled(true);
-  //       }
-  //     })
-  //     .catch(error => console.log(error))
-  //     .finally(() => setIsLoading(false));
-  // }
   function getSavedNews() {
     mainApi
       .getSavedNews()
@@ -266,8 +237,9 @@ function App() {
   function handleDeleteArticle(article) {
     mainApi
       .deleteArticle(article._id)
-      .then(() =>
-        setSavedNews(savedNews.filter((item) => item._id !== article._id))
+      .then(() => {
+          setSavedNews(savedNews.filter((item) => item._id !== article._id));
+        }
       )
       .catch((err) => console.log(`Ошибка при удалении карточки: ${err}`));
   }
@@ -280,7 +252,7 @@ function App() {
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
-      <NewsContext.Provider value={{ news, savedNews }}>
+      <NewsContext.Provider value={{news, savedNews}}>
         <div className="app">
           {pathname === "/" ? (
             <>
@@ -330,10 +302,10 @@ function App() {
               openLoginPopup={openLoginPopup}
             />
             <Route>
-              <Redirect to="/" />
+              <Redirect to="/"/>
             </Route>
           </Switch>
-          <Footer />
+          <Footer/>
           <Register
             onClose={closeRegisterPopup}
             isOpen={isRegisterPopupOpen}

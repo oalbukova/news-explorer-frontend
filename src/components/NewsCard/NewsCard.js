@@ -42,8 +42,9 @@ function NewsCard(props) {
   const btnImg = `${pathname === "/" ? like : btnDel}`;
   const btnImgHover = `${pathname === "/" ? likeHover : btnDelHover}`;
   const btnHover = `${isHover ? btnImgHover : btnImg}`;
-  const btnActive = `${isClicked && loggedIn || isSaved ? likeActive : btnHover}`;
+  const btnActive = `${(isClicked && loggedIn) || isSaved ? likeActive : btnHover}`;
   const btnClick = `${pathname === "/" ? btnActive : btnHover}`;
+  const btnBlue = `${isSaved && isClicked ? btnHover : btnClick}`;
 
   function handleLikeHover() {
     setIsHover(!isHover);
@@ -69,7 +70,7 @@ function NewsCard(props) {
         onMouseEnter={handleLikeHover}
         onMouseLeave={handleLikeHover}
         onClick={handleCardClick}
-        style={{backgroundImage: "url(" + btnClick + ")"}}
+        style={{backgroundImage: "url(" + btnBlue + ")"}}
       >
         {(!loggedIn || (loggedIn && isSaved)) &&
         <span className={tooltipClassName}>{tooltipText}</span>
