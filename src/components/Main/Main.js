@@ -1,43 +1,67 @@
 import React from "react";
 import NewsCardList from "../NewsCardList/NewsCardList";
-import NewsCard from "../NewsCard/NewsCard";
 import Preloader from "../Preloader/Preloader";
+import NotFoundNews from "../NotFoundNews/NotFoundNews";
 import About from "../About/About";
-import img08 from "../../images/image08.jpg";
-import img04 from "../../images/image04.jpg";
-import img07 from "../../images/image07.jpg";
+import { NewsContext } from "../../contexts/NewsContext";
+import { NEWS_IN_ROW } from "../../utils/config";
+import "./Main.css";
 
-function Main() {
+export default function Main(props) {
+  const {
+    loggedIn,
+    isLoading,
+    onCardClick,
+    onShowMore,
+    isSearchOk,
+    currentRow,
+    isErr,
+  } = props;
+
+  const { news, savedNews } = React.useContext(NewsContext);
+  const newsToRender = news.slice(0, (currentRow + 1) * NEWS_IN_ROW);
+
   return (
     <div className="main">
-      <Preloader />
-      <NewsCardList>
-        <NewsCard
-          img={img08}
-          src="https://lenta.ru/"
-          title="Национальное достояние – парки"
-          text="В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе."
-          source="Лента.ру"
+      {isLoading && <Preloader />}
+      {isSearchOk && (
+        <section className="main__card-list">
+          {newsToRender.length ? (
+            <>
+              <h2 className="main__card-title">Результаты поиска</h2>
+              <NewsCardList
+                newsToRender={newsToRender}
+                loggedIn={loggedIn}
+                savedNews={savedNews}
+                onCardClick={onCardClick}
+                currentRow={currentRow}
+              />
+              {newsToRender.length !== news.length && (
+                <button
+                  className="main__btn"
+                  type="button"
+                  onClick={onShowMore}
+                >
+                  Показать еще
+                </button>
+              )}
+            </>
+          ) : (
+            <NotFoundNews
+              title="Ничего не найдено"
+              text="К сожалению по вашему запросу ничего не найдено."
+            />
+          )}
+        </section>
+      )}
+      {isErr && (
+        <NotFoundNews
+          title="Во время запроса произошла ошибка."
+          text="Возможно, проблема с соединением или сервер недоступен.
+              Подождите немного и попробуйте ещё раз"
         />
-        <NewsCard
-          img={img04}
-          src="https://meduza.io/"
-          title="Лесные огоньки: история одной фотографии"
-          text="Фотограф отвлеклась от освещения суровой политической реальности Мексики, чтобы запечатлеть ускользающую красоту одного
-из местных чудес природы."
-          source="Медуза"
-        />
-        <NewsCard
-          img={img07}
-          src="https://ria.ru/"
-          title="«Первозданная тайга»: новый фотопроект Игоря Шпиленка"
-          text="Знаменитый фотограф снимает первозданные леса России, чтобы рассказать о необходимости их сохранения. В этот раз он отправился в Двинско-Пинежскую тайгу, где теперь"
-          source="Риа"
-        />
-      </NewsCardList>
+      )}
       <About />
     </div>
   );
 }
-
-export default Main;

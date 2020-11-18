@@ -1,0 +1,8 @@
+.tooltip_save {
+  background-image: url("../../../../images/like.svg");
+}
+
+.tooltip_save:hover {
+  background-image: url("../../../../images/like-hover.svg");
+}
+

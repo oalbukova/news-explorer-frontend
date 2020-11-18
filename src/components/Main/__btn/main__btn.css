@@ -1,4 +1,4 @@
-.card-list__btn {
+.main__btn {
   margin: 0 auto 81px;
   width: 288px;
   height: 64px;
@@ -13,14 +13,14 @@
   line-height: 24px;
 }
 
-.card-list__btn:hover {
+.main__btn:hover {
   background-color: rgba(255, 255, 255, .9);
   cursor: pointer;
   box-shadow: 0 0 10px rgba(0, 0, 0, .3);
 }
 
 @media (max-width: 768px) {
-  .card-list__btn {
+  .main__btn {
     height: 56px;
     width: 240px;
     margin-bottom: 42px;
@@ -28,7 +28,7 @@
 }
 
 @media (max-width: 600px) {
-  .card-list__btn {
+  .main__btn {
     width: 288px;
     margin: 7px auto 33px;
   }

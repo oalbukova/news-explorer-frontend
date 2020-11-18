@@ -2,7 +2,7 @@ import React from "react";
 import PopupWithForm from "../PopupWithForm/PopupWithForm";
 
 function Login(props) {
-  const { changePopup, isOpen, onClose } = props;
+  const {changePopup, isOpen, onClose, registrationErr, onLogin, isLoading} = props;
   const emailRef = React.useRef();
   const passwordRef = React.useRef();
   const [email, setEmail] = React.useState("");
@@ -13,10 +13,17 @@ function Login(props) {
   const [passwordValid, setPasswordValid] = React.useState(false);
   const [disabled, setDisabled] = React.useState(true);
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!email || !password) {
+      return;
+    }
+    onLogin({email, password});
+  }
+
   function validate() {
     setLoginEmailError(emailRef.current.validationMessage);
     setLoginPasswordError(passwordRef.current.validationMessage);
-
     !emailRef.current.validity.valid
       ? setEmailValid(false)
       : setEmailValid(true);
@@ -26,7 +33,7 @@ function Login(props) {
   }
 
   React.useEffect(() => {
-    setDisabled(false);
+    setDisabled(true)
     setEmail("");
     setPassword("");
     setLoginEmailError("");
@@ -49,11 +56,11 @@ function Login(props) {
 
   return (
     <PopupWithForm
+      onSubmit={handleSubmit}
       name="login"
       title="Вход"
       isOpen={isOpen}
       onClose={onClose}
-      disabled={disabled}
     >
       <span className="popup__input-name" lang="en">
         Email
@@ -71,6 +78,7 @@ function Login(props) {
         pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
         minLength="4"
         maxLength="40"
+        disabled={isLoading}
       />
       <span
         className={`popup__span-error ${
@@ -92,6 +100,7 @@ function Login(props) {
         value={password || ""}
         ref={passwordRef}
         onChange={handleChangePassword}
+        disabled={isLoading}
       />
       <span
         className={`popup__span-error ${
@@ -101,6 +110,9 @@ function Login(props) {
       >
         {loginPasswordError}
       </span>
+      <span className="popup__registration-err">
+        {registrationErr}
+      </span>
       <button
         className={
           !disabled
@@ -108,7 +120,7 @@ function Login(props) {
             : "popup__button-save popup__button-save_type_disabled"
         }
         type="submit"
-        disabled={props.disabled}
+        disabled={isLoading}
       >
         Войти
       </button>

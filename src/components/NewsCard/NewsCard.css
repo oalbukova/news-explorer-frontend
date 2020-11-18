@@ -7,6 +7,9 @@
 @import url(./__title/card__title.css);
 @import url(./__sourse/card__sourse.css);
 @import url(./tooltip/tooltip.css);
+@import url(./tooltip/_save/tooltip_save.css);
+@import url(./tooltip/_save-active/tooltip_save-active.css);
+@import url(./tooltip/_trash/tooltip_trash.css);
 
 .card {
   border-radius: 16px;

@@ -4,6 +4,7 @@
 @import url(./__key/_bold/news-info__key_bold.css);
 
 .news-info {
+  flex: 1;
   padding: 41px 104px 37px;
 }
 

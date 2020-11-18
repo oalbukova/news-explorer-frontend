@@ -1,5 +1,5 @@
 .card__sourse {
-  width: 89px;
+  width: calc(100% - 20px);
   height: 20px;
   color: #b6bcbf;
   font-family: 'Roboto Slab', Arial, sans-serif;

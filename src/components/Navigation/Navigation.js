@@ -1,10 +1,22 @@
 import React from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import {
+  NavLink,
+  useLocation,
+} from "react-router-dom";
+import {CurrentUserContext} from "../../contexts/CurrentUserContext";
 import "./Navigation.css";
 
 function Navigation(props) {
-  const { pathname } = useLocation();
-  const { changeBackground, onLogin } = props;
+  const currentUser = React.useContext(CurrentUserContext);
+  const {
+    pathname
+  } = useLocation();
+  const {
+    changeBackground,
+    onLoginOpen,
+    onSignOut,
+    loggedIn,
+  } = props;
 
   const btnImgClassName = `${
     pathname === "/"
@@ -22,61 +34,80 @@ function Navigation(props) {
       : "navigation__link navigation__link_loggedin"
   }`;
 
+  function logOut() {
+    onSignOut();
+    changeBackground();
+  }
+
   return (
     <nav className="navigation">
-      {pathname === "/" ? (
-        <>
-          <NavLink
-            exact
-            to="/"
-            activeClassName="navigation__link_active"
-            className={linkClassName}
-          >
-            Главная
-          </NavLink>
-          <NavLink
-            exact
-            to="/saved-news"
-            activeClassName="navigation__link_active-black"
-            className={linkClassName}
-            onClick={changeBackground}
-          >
-            Сохранённые статьи
-          </NavLink>
-          <button className={buttonClassName} onClick={onLogin}>
-            Авторизоваться
-          </button>
-        </>
-      ) : (
-        <>
-          <NavLink
-            exact
-            to="/"
-            activeClassName="navigation__link_active"
-            className={linkClassName}
-            onClick={changeBackground}
-          >
-            Главная
-          </NavLink>
-          <NavLink
-            exact
-            to="/saved-news"
-            activeClassName="navigation__link_active-black"
-            className={linkClassName}
-          >
-            Сохранённые статьи
-          </NavLink>
-          <NavLink
-            className={buttonClassName}
-            exact
-            to="/"
-            onClick={changeBackground}
-          >
-            Грета
-            <div className={btnImgClassName} />
-          </NavLink>
-        </>
-      )}
+
+      {pathname === "/" ?
+        <NavLink
+          exact
+          to="/"
+          activeClassName="navigation__link_active"
+          className={linkClassName}
+        >
+          Главная
+        </NavLink>
+        :
+        <NavLink
+          exact
+          to="/"
+          activeClassName="navigation__link_active"
+          className={linkClassName}
+          onClick={changeBackground}
+        >
+          Главная
+        </NavLink>
+      }
+
+      {loggedIn ? (
+          <>
+            {pathname === "/saved-news" ?
+              <NavLink
+                exact
+                to="/saved-news"
+                activeClassName="navigation__link_active-black"
+                className={linkClassName}
+              >
+                Сохранённые статьи
+              </NavLink>
+              :
+              <NavLink
+                exact
+                to="/saved-news"
+                activeClassName="navigation__link_active-black"
+                className={linkClassName}
+                onClick={changeBackground}
+              >
+                Сохранённые статьи
+              </NavLink>
+            }
+            {pathname === "/" ?
+              <button
+                className={buttonClassName}
+                onClick={onSignOut}
+              >
+                {currentUser.name}
+                <div className={btnImgClassName}/>
+              </button>
+              :
+              <button
+                className={buttonClassName}
+                onClick={logOut}
+              >
+                {currentUser.name}
+                <div className={btnImgClassName}/>
+              </button>
+            }
+          </>
+        ) :
+        <button className={buttonClassName} onClick={onLoginOpen}>
+          Авторизоваться
+        </button>
+      }
     </nav>
   );
 }
