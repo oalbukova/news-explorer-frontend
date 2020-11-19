@@ -19,24 +19,24 @@ export default function Main(props) {
   } = props;
 
   const { news, savedNews } = React.useContext(NewsContext);
-  const newsToRender = news.slice(0, (currentRow + 1) * NEWS_IN_ROW);
+  const articlesToRender = news.slice(0, (currentRow + 1) * NEWS_IN_ROW);
 
   return (
     <div className="main">
       {isLoading && <Preloader />}
       {isSearchOk && (
         <section className="main__card-list">
-          {newsToRender.length ? (
+          {articlesToRender.length ? (
             <>
               <h2 className="main__card-title">Результаты поиска</h2>
               <NewsCardList
-                newsToRender={newsToRender}
+                articlesToRender={articlesToRender}
                 loggedIn={loggedIn}
                 savedNews={savedNews}
                 onCardClick={onCardClick}
                 currentRow={currentRow}
               />
-              {newsToRender.length !== news.length && (
+              {articlesToRender.length !== news.length && (
                 <button
                   className="main__btn"
                   type="button"

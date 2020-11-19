@@ -6,8 +6,8 @@ import {
   useHistory,
   useLocation,
 } from "react-router-dom";
-import {CurrentUserContext} from "../../contexts/CurrentUserContext";
-import {NewsContext} from "../../contexts/NewsContext";
+import { CurrentUserContext } from "../../contexts/CurrentUserContext";
+import { NewsContext } from "../../contexts/NewsContext";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute"; // импортируем HOC
 import Header from "../Header/Header";
 import SearchForm from "../SearchForm/SearchForm";
@@ -29,7 +29,8 @@ function App() {
   const [news, setNews] = React.useState([]);
   const [savedNews, setSavedNews] = React.useState([]);
   const [currentRow, setCurrentRow] = React.useState(0);
-  const [searchErr, setSearchErr] = React.useState("");
+  const [searchErr, setSearchErr] = React.useState(false);
+  const [errSearchInput, setErrSearchInput] = React.useState("");
   const [isSearchOk, setSearchOk] = React.useState(false);
   const [isLoading, setIsLoading] = React.useState(false);
   const [loggedIn, setLoggedIn] = React.useState(false);
@@ -38,10 +39,10 @@ function App() {
   const [registrationErr, setRegistrationErr] = React.useState("");
 
   const history = useHistory();
-  const {pathname} = useLocation();
+  const { pathname } = useLocation();
 
   function clearSearchErr() {
-    setSearchErr("");
+    setErrSearchInput("");
   }
 
   function openRegisterPopup() {
@@ -130,7 +131,7 @@ function App() {
         .then((res) => {
           setLoggedIn(true);
           setCurrentUser(res.data);
-          getSavedNews();
+          getSavedArticles();
         })
         .catch((err) => console.log(err));
     }
@@ -153,7 +154,7 @@ function App() {
 
   function handleSearchNews(keyword) {
     if (!keyword) {
-      setSearchErr("Нужно ввести ключевое слово");
+      setErrSearchInput("Нужно ввести ключевое слово");
       return;
     }
     setIsLoading(true);
@@ -163,19 +164,21 @@ function App() {
     newsApi
       .getNews(keyword)
       .then((res) => {
-        const news = res.articles.map((item) => ({...item, keyword}));
-        console.log(news)
+        const news = res.articles.map((item) => ({ ...item, keyword }));
+        console.log(news);
         setNews(news);
         localStorage.setItem("news", JSON.stringify(news));
         setSearchOk(true);
+        setSearchErr(false);
       })
       .catch((err) => {
         console.log(`Ошибка при загрузке новостей: ${err}`);
+        setSearchErr(true);
       })
       .finally(() => setIsLoading(false));
   }
 
-  function handleRegister({email, password, name}) {
+  function handleRegister({ email, password, name }) {
     setIsLoading(true);
     mainApi
       .register(email, escape(password), name)
@@ -192,7 +195,7 @@ function App() {
       .finally(() => setIsLoading(false));
   }
 
-  function handleLogin({email, password}) {
+  function handleLogin({ email, password }) {
     setIsLoading(true);
     mainApi
       .authorize(email, escape(password))
@@ -203,7 +206,7 @@ function App() {
           .catch((err) => setRegistrationErr(err.message));
         setLoggedIn(true);
         closeLoginPopup();
-        getSavedNews();
+        getSavedArticles();
       })
       .catch((err) => {
         setRegistrationErr(err.message);
@@ -211,9 +214,9 @@ function App() {
       .finally(() => setIsLoading(false));
   }
 
-  function getSavedNews() {
+  function getSavedArticles() {
     mainApi
-      .getSavedNews()
+      .getSavedArticles()
       .then((news) => setSavedNews(news.data))
       .catch((err) =>
         console.log(`Ошибка при загрузке сохранённых новостей: ${err.message}`)
@@ -229,9 +232,9 @@ function App() {
     if (!saved) {
       mainApi
         .saveArticle(article)
-        .then(newArticle => setSavedNews([newArticle.data, ...savedNews]))
+        .then((newArticle) => setSavedNews([newArticle.data, ...savedNews]))
         .catch((err) => console.log(err));
-      return;
+      return savedNews;
     }
     handleDeleteArticle(saved);
   }
@@ -240,9 +243,8 @@ function App() {
     mainApi
       .deleteArticle(article._id)
       .then(() => {
-          setSavedNews(savedNews.filter((item) => item._id !== article._id));
-        }
-      )
+        setSavedNews(savedNews.filter((item) => item._id !== article._id));
+      })
       .catch((err) => console.log(`Ошибка при удалении карточки: ${err}`));
   }
 
@@ -254,7 +256,7 @@ function App() {
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
-      <NewsContext.Provider value={{news, savedNews}}>
+      <NewsContext.Provider value={{ news, savedNews }}>
         <div className="app">
           {pathname === "/" ? (
             <>
@@ -270,7 +272,7 @@ function App() {
                 <SearchForm
                   onSearch={handleSearchNews}
                   isLoading={isLoading}
-                  searchErr={searchErr}
+                  errSearchInput={errSearchInput}
                   clearSearchErr={clearSearchErr}
                 />
               </div>
@@ -289,7 +291,7 @@ function App() {
                 onSearch={handleSearchNews}
                 loggedIn={loggedIn}
                 isLoading={isLoading}
-                isError={searchErr}
+                isErr={searchErr}
                 isSearchOk={isSearchOk}
                 currentRow={currentRow}
                 onCardClick={handleArticleClick}
@@ -304,10 +306,10 @@ function App() {
               openLoginPopup={openLoginPopup}
             />
             <Route>
-              <Redirect to="/"/>
+              <Redirect to="/" />
             </Route>
           </Switch>
-          <Footer/>
+          <Footer />
           <Register
             onClose={closeRegisterPopup}
             isOpen={isRegisterPopupOpen}

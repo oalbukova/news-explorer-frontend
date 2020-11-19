@@ -1,4 +1,4 @@
-import { BASE_URL } from "./config";
+import {BASE_URL} from "./config";
 
 export const register = (email, password, name) => {
   return fetch(`${BASE_URL}/signup`, {
@@ -7,7 +7,7 @@ export const register = (email, password, name) => {
       "Content-Type": "application/json",
       "Access-Control-Allow-Credentials": true,
     },
-    body: JSON.stringify({ email, password, name }),
+    body: JSON.stringify({email, password, name}),
   })
     .then((res) => {
       if (!res.ok) {
@@ -35,7 +35,7 @@ export const authorize = (email, password) => {
       "Access-Control-Allow-Credentials": true,
     },
     credentials: "include",
-    body: JSON.stringify({ email, password }),
+    body: JSON.stringify({email, password}),
   })
     .then((res) => {
       if (res.status === 200) {
@@ -89,7 +89,7 @@ export const getContent = (token) => {
     });
 };
 
-export const getSavedNews = () => {
+export const getSavedArticles = () => {
   return fetch(`${BASE_URL}/articles`, {
     method: "GET",
     headers: {
@@ -97,9 +97,15 @@ export const getSavedNews = () => {
       Authorization: `Bearer ${localStorage.getItem("jwt")}`,
     },
   }).then((res) => {
+    if (!res.ok) {
+      return res.json();
+    }
     return res.json();
-    //  return Promise.reject(`Ошибка: ${res.status}`); // если ошибка, отклоняем промис
-  });
+  })
+    .catch((err) => {
+      console.log(err);
+      return Promise.reject(err);
+    });
 };
 
 export const saveArticle = (article) => {
@@ -115,7 +121,7 @@ export const saveArticle = (article) => {
   return fetch(`${BASE_URL}/articles`, {
     method: "POST",
     headers: {
-      'Content-Type': 'application/json',
+      "Content-Type": "application/json",
       Authorization: `Bearer ${localStorage.getItem("jwt")}`,
     },
     credentials: "include",
@@ -129,26 +135,23 @@ export const saveArticle = (article) => {
       urlToImage,
     }),
   }).then((res) => {
-    //    if (res.ok) {
+    if (!res.ok) {
+      return res.json();
+    }
     return res.json();
-    //    }
-    // return Promise.reject(`Ошибка: ${res.status}`);
-  });
+  })
+    .catch((err) => {
+      console.log(err);
+      return Promise.reject(err);
+    });
 };
 
 export const deleteArticle = (id) => {
   return fetch(`${BASE_URL}/articles/${id}`, {
     method: "DELETE",
     headers: {
-      'Content-Type': 'application/json',
+      "Content-Type": "application/json",
       Authorization: `Bearer ${localStorage.getItem("jwt")}`,
     },
   });
-  // .then((res) => {
-  //   if (res.ok) {
-  //     return res.json();
-  //   }
-  //   return Promise.reject(`error${res.status}`);
-  // });
 };
-

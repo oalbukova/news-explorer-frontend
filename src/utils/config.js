@@ -3,7 +3,7 @@ import { dateFrom, dateTo } from './utils'
 export const BASE_URL = 'https://api.albnews.students.nomoreparties.xyz';
 export const NEWS_IN_ROW = 3;
 export const NEWS_API_OPTIONS = {
-  baseUrl: 'https://newsapi.org/v2/everything',
+  baseUrl: 'https://nomoreparties.co/news/v2/everything',
   from: `from=${dateFrom}`,
   to: `to=${dateTo}`,
   pageSize: 'pageSize=100',
