@@ -30,7 +30,6 @@ function SavedNewsHeader(props) {
       .slice(2)
       .length}${getKeywordsText(keywordsSorted.length-2)}`;
 
-
   return (
     <section className="news-info">
       <p className="news-info__subtitle">Сохранённые статьи</p>
