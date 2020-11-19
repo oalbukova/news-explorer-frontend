@@ -1,31 +1,31 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1bb119e81b68ad2e10734f2d8f85bfdb",
+    "revision": "18e9ddc1ae092580a788dee0a023c615",
     "url": "/news-explorer-frontend/index.html"
   },
   {
-    "revision": "b9580bfd9d61b23a959e",
-    "url": "/news-explorer-frontend/static/css/main.2131719a.chunk.css"
+    "revision": "72eefe3bc118a04a991c",
+    "url": "/news-explorer-frontend/static/css/main.54bdd871.chunk.css"
   },
   {
-    "revision": "dba94f94a00c13000a25",
-    "url": "/news-explorer-frontend/static/js/2.13a1560a.chunk.js"
+    "revision": "f37fb1b5df9b0333eab3",
+    "url": "/news-explorer-frontend/static/js/2.9841743e.chunk.js"
   },
   {
-    "revision": "3c73c585782ac05880c0f89bcfdbba5a",
-    "url": "/news-explorer-frontend/static/js/2.13a1560a.chunk.js.LICENSE.txt"
+    "revision": "529bde968b6852aac46c0e15f21f98f0",
+    "url": "/news-explorer-frontend/static/js/2.9841743e.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "b9580bfd9d61b23a959e",
-    "url": "/news-explorer-frontend/static/js/main.46794776.chunk.js"
+    "revision": "72eefe3bc118a04a991c",
+    "url": "/news-explorer-frontend/static/js/main.20845bc6.chunk.js"
   },
   {
     "revision": "30563db5395ebfdbb83c",
     "url": "/news-explorer-frontend/static/js/runtime-main.0fc9bfae.js"
   },
   {
-    "revision": "cd81769edff9999fc2aa5ed91df9e4f1",
-    "url": "/news-explorer-frontend/static/media/background.cd81769e.jpg"
+    "revision": "82187fd36b2a8480935439972a5556c6",
+    "url": "/news-explorer-frontend/static/media/background.82187fd3.jpg"
   },
   {
     "revision": "dadaa0542b02e183e508c7bfb31dca01",
@@ -46,30 +46,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "f7f3402fa10a7898774ace0c6da17cb8",
     "url": "/news-explorer-frontend/static/media/github.f7f3402f.svg"
-  },
-  {
-    "revision": "b06afc7f30ff2d8b031b0adc4a9b76b1",
-    "url": "/news-explorer-frontend/static/media/image01.b06afc7f.jpg"
-  },
-  {
-    "revision": "bb2fc0239b67e9197361a5dd97035a5f",
-    "url": "/news-explorer-frontend/static/media/image04.bb2fc023.jpg"
-  },
-  {
-    "revision": "54e95b027898c03f85fb11ec93e5af2a",
-    "url": "/news-explorer-frontend/static/media/image05.54e95b02.jpg"
-  },
-  {
-    "revision": "79acbd9a2ec0877d6e7fe764257e0445",
-    "url": "/news-explorer-frontend/static/media/image06.79acbd9a.jpg"
-  },
-  {
-    "revision": "fe8df1f82e6c18267b7c94d052820995",
-    "url": "/news-explorer-frontend/static/media/image07.fe8df1f8.jpg"
-  },
-  {
-    "revision": "e3324735f05df49a407be8f2a34749ce",
-    "url": "/news-explorer-frontend/static/media/image08.e3324735.jpg"
   },
   {
     "revision": "1f3fcaf555abac660cc9ad01698f7d12",
