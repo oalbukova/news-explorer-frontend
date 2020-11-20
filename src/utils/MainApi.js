@@ -7,6 +7,7 @@ export const register = (email, password, name) => {
       "Content-Type": "application/json",
       "Access-Control-Allow-Credentials": true,
     },
+    credentials: "include",
     body: JSON.stringify({email, password, name}),
   })
     .then((res) => {
@@ -68,6 +69,7 @@ export const getContent = (token) => {
       "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,
     },
+    credentials: "include",
   })
     .then((res) => {
       if (res.status === 200) {
@@ -96,6 +98,7 @@ export const getSavedArticles = () => {
       "Content-Type": "application/json",
       Authorization: `Bearer ${localStorage.getItem("jwt")}`,
     },
+    credentials: "include",
   }).then((res) => {
     if (!res.ok) {
       return res.json();

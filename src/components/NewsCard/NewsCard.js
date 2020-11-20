@@ -5,10 +5,11 @@ import {useLocation} from "react-router-dom";
 import "./NewsCard.css";
 
 function NewsCard(props) {
+  const {savedNews} = React.useContext(NewsContext);
+  const [isClicked, setIsClicked] = React.useState(false);
   const {loggedIn, onCardClick, article} = props;
   const {keyword, title, description, publishedAt, url, urlToImage, source} = article;
-  const [isClicked, setIsClicked] = React.useState(false);
-  const {savedNews} = React.useContext(NewsContext);
+
   const {pathname} = useLocation();
 
   const isSaved = loggedIn

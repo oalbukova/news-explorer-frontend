@@ -1,9 +1,8 @@
-
-let date = new Date();
+const date = new Date();
 const WEEK = 7;
 date.setDate(date.getDate() - WEEK);
-export let dateFrom = date.toISOString().split('T')[0];
-export let dateTo = new Date().toISOString().split('T')[0];
+export const dateFrom = date.toISOString().split('T')[0];
+export const dateTo = new Date().toISOString().split('T')[0];
 
 export const getSavedArticlesText = (number) => {
   let text = 'сохранённых статей';

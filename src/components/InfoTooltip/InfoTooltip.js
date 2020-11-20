@@ -3,7 +3,7 @@ import React from "react";
 import PopupWithForm from "../PopupWithForm/PopupWithForm";
 
 function InfoTooltip(props) {
-  const { isOpen, onClose, changePopup } = props;
+  const {isOpen, onClose, changePopup} = props;
 
   return (
     <PopupWithForm

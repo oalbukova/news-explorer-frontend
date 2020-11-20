@@ -1,13 +1,7 @@
 import React from "react";
-import {
-  Route,
-  Switch,
-  Redirect,
-  useHistory,
-  useLocation,
-} from "react-router-dom";
-import { CurrentUserContext } from "../../contexts/CurrentUserContext";
-import { NewsContext } from "../../contexts/NewsContext";
+import {Route, Switch, Redirect, useHistory, useLocation} from "react-router-dom";
+import {CurrentUserContext} from "../../contexts/CurrentUserContext";
+import {NewsContext} from "../../contexts/NewsContext";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute"; // импортируем HOC
 import Header from "../Header/Header";
 import SearchForm from "../SearchForm/SearchForm";
@@ -23,23 +17,23 @@ import "./App.css";
 
 function App() {
   const escape = require("escape-html");
+  const [news, setNews] = React.useState([]);
+  const [savedNews, setSavedNews] = React.useState([]);
+  const [currentUser, setCurrentUser] = React.useState({});
   const [isRegisterPopupOpen, setIsRegisterPopupOpen] = React.useState(false);
   const [isLoginPopupOpen, setIsLoginPopupOpen] = React.useState(false);
   const [isTooltipOpen, setIsTooltipOpen] = React.useState(false);
-  const [news, setNews] = React.useState([]);
-  const [savedNews, setSavedNews] = React.useState([]);
-  const [currentRow, setCurrentRow] = React.useState(0);
   const [searchErr, setSearchErr] = React.useState(false);
-  const [errSearchInput, setErrSearchInput] = React.useState("");
   const [isSearchOk, setSearchOk] = React.useState(false);
   const [isLoading, setIsLoading] = React.useState(false);
   const [loggedIn, setLoggedIn] = React.useState(false);
-  const [currentUser, setCurrentUser] = React.useState({});
   const [isMobile, setIsMobile] = React.useState(false);
+  const [currentRow, setCurrentRow] = React.useState(0);
   const [registrationErr, setRegistrationErr] = React.useState("");
+  const [errSearchInput, setErrSearchInput] = React.useState("");
 
   const history = useHistory();
-  const { pathname } = useLocation();
+  const {pathname} = useLocation();
 
   function clearSearchErr() {
     setErrSearchInput("");
@@ -164,7 +158,7 @@ function App() {
     newsApi
       .getNews(keyword)
       .then((res) => {
-        const news = res.articles.map((item) => ({ ...item, keyword }));
+        const news = res.articles.map((item) => ({...item, keyword}));
         console.log(news);
         setNews(news);
         localStorage.setItem("news", JSON.stringify(news));
@@ -178,7 +172,7 @@ function App() {
       .finally(() => setIsLoading(false));
   }
 
-  function handleRegister({ email, password, name }) {
+  function handleRegister({email, password, name}) {
     setIsLoading(true);
     mainApi
       .register(email, escape(password), name)
@@ -195,7 +189,7 @@ function App() {
       .finally(() => setIsLoading(false));
   }
 
-  function handleLogin({ email, password }) {
+  function handleLogin({email, password}) {
     setIsLoading(true);
     mainApi
       .authorize(email, escape(password))
@@ -256,7 +250,7 @@ function App() {
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
-      <NewsContext.Provider value={{ news, savedNews }}>
+      <NewsContext.Provider value={{news, savedNews}}>
         <div className="app">
           {pathname === "/" ? (
             <>
@@ -306,10 +300,10 @@ function App() {
               openLoginPopup={openLoginPopup}
             />
             <Route>
-              <Redirect to="/" />
+              <Redirect to="/"/>
             </Route>
           </Switch>
-          <Footer />
+          <Footer/>
           <Register
             onClose={closeRegisterPopup}
             isOpen={isRegisterPopupOpen}
