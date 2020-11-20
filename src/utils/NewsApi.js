@@ -1,3 +1,4 @@
+
 import { NEWS_API_OPTIONS } from './config';
 const { baseUrl, from, to, pageSize, apiKey, headers } = NEWS_API_OPTIONS;
 
