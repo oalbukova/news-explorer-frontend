@@ -3,7 +3,13 @@
 
 Данный проект представляет собой типовое веб-приложение для поиска новостей, с помощью которого можно искать новости по ключевому слову и сохранять их в личном кабинете. 
 
-### Проект на gh-pages: https://oalbukova.github.io/news-explorer-frontend/
+### Проект доступен по ссылкам: 
+https://albnews.students.nomoreparties.xyz/
+http://albnews.students.nomoreparties.xyz/
+https://www.albnews.students.nomoreparties.xyz/
+http://www.albnews.students.nomoreparties.xyz/
+
+###Публичный IP-адрес сервера: 84.201.134.188
 
 Верстка сайта происходила согласно: [макет Фигма](https://www.figma.com/file/Dhl21eRzzbFMBe0DU9SglF/Diploma-WEB-v2.0-(for-students)?node-id=157%3A1409)
    

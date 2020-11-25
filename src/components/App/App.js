@@ -159,7 +159,6 @@ function App() {
       .getNews(keyword)
       .then((res) => {
         const news = res.articles.map((item) => ({...item, keyword}));
-        console.log(news);
         setNews(news);
         localStorage.setItem("news", JSON.stringify(news));
         setSearchOk(true);
