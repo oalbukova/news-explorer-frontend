@@ -2,7 +2,7 @@ import React from "react";
 import "./SearchForm.css";
 
 function SearchForm(props) {
-  const {isLoading, onSearch, searchErr, clearSearchErr} = props;
+  const {isLoading, onSearch, errSearchInput, clearSearchErr} = props;
 
   const keyword = React.useRef();
 
@@ -43,7 +43,7 @@ function SearchForm(props) {
       </form>
       <span
         className="search__span-error"
-      >{searchErr}</span>
+      >{errSearchInput}</span>
     </section>
   );
 }

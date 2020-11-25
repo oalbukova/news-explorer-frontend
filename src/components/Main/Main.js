@@ -1,10 +1,10 @@
 import React from "react";
+import {NewsContext} from "../../contexts/NewsContext";
+import {NEWS_IN_ROW} from "../../utils/config";
 import NewsCardList from "../NewsCardList/NewsCardList";
 import Preloader from "../Preloader/Preloader";
 import NotFoundNews from "../NotFoundNews/NotFoundNews";
 import About from "../About/About";
-import { NewsContext } from "../../contexts/NewsContext";
-import { NEWS_IN_ROW } from "../../utils/config";
 import "./Main.css";
 
 export default function Main(props) {
@@ -18,25 +18,25 @@ export default function Main(props) {
     isErr,
   } = props;
 
-  const { news, savedNews } = React.useContext(NewsContext);
-  const newsToRender = news.slice(0, (currentRow + 1) * NEWS_IN_ROW);
+  const {news, savedNews} = React.useContext(NewsContext);
+  const articlesToRender = news.slice(0, (currentRow + 1) * NEWS_IN_ROW);
 
   return (
     <div className="main">
-      {isLoading && <Preloader />}
+      {isLoading && <Preloader/>}
       {isSearchOk && (
         <section className="main__card-list">
-          {newsToRender.length ? (
+          {articlesToRender.length ? (
             <>
               <h2 className="main__card-title">Результаты поиска</h2>
               <NewsCardList
-                newsToRender={newsToRender}
+                articlesToRender={articlesToRender}
                 loggedIn={loggedIn}
                 savedNews={savedNews}
                 onCardClick={onCardClick}
                 currentRow={currentRow}
               />
-              {newsToRender.length !== news.length && (
+              {articlesToRender.length !== news.length && (
                 <button
                   className="main__btn"
                   type="button"
@@ -61,7 +61,7 @@ export default function Main(props) {
               Подождите немного и попробуйте ещё раз"
         />
       )}
-      <About />
+      <About/>
     </div>
   );
 }

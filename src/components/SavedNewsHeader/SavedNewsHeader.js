@@ -28,14 +28,14 @@ function SavedNewsHeader(props) {
       .slice(0, 2)
       .join(', ')} и ${keywordsSorted
       .slice(2)
-      .length}${getKeywordsText(keywordsSorted.length-2)}`;
-
+      .length}${getKeywordsText(keywordsSorted.length - 2)}`;
 
   return (
     <section className="news-info">
       <p className="news-info__subtitle">Сохранённые статьи</p>
       <h3 className="news-info__title">{currentUser.name}, у
-        вас {savedNews.length} {getSavedArticlesText(savedNews.length)}</h3>
+        вас {savedNews.length > 0 ? savedNews.length + ' ' : 'нет '}
+        {getSavedArticlesText(savedNews.length)}</h3>
       {(savedNews.length > 0) ?
         <p className="news-info__key">
           По ключевым словам:&nbsp;

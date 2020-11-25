@@ -1,8 +1,9 @@
 import React from "react";
 
+import {NewsContext} from "../../contexts/NewsContext";
 import NewsCardList from "../NewsCardList/NewsCardList";
 import SavedNewsHeader from "../SavedNewsHeader/SavedNewsHeader";
-import {NewsContext} from "../../contexts/NewsContext";
+
 
 function SavedNews(props) {
   const {loggedIn, onCardClick} = props;
@@ -11,13 +12,13 @@ function SavedNews(props) {
   return (
     <>
       <SavedNewsHeader loggedIn={loggedIn}/>
-      {(savedNews.length > 0) ?
+      {savedNews.length > 0 ? (
         <NewsCardList
           loggedIn={loggedIn}
           onCardClick={onCardClick}
-          newsToRender={savedNews}
+          articlesToRender={savedNews}
         />
-        : null}
+      ) : null}
     </>
   );
 }

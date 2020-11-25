@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  Route,
-  Switch,
-  Redirect,
-  useHistory,
-  useLocation,
-} from "react-router-dom";
+import {Route, Switch, Redirect, useHistory, useLocation} from "react-router-dom";
 import {CurrentUserContext} from "../../contexts/CurrentUserContext";
 import {NewsContext} from "../../contexts/NewsContext";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute"; // импортируем HOC
@@ -23,25 +17,26 @@ import "./App.css";
 
 function App() {
   const escape = require("escape-html");
+  const [news, setNews] = React.useState([]);
+  const [savedNews, setSavedNews] = React.useState([]);
+  const [currentUser, setCurrentUser] = React.useState({});
   const [isRegisterPopupOpen, setIsRegisterPopupOpen] = React.useState(false);
   const [isLoginPopupOpen, setIsLoginPopupOpen] = React.useState(false);
   const [isTooltipOpen, setIsTooltipOpen] = React.useState(false);
-  const [news, setNews] = React.useState([]);
-  const [savedNews, setSavedNews] = React.useState([]);
-  const [currentRow, setCurrentRow] = React.useState(0);
-  const [searchErr, setSearchErr] = React.useState("");
+  const [searchErr, setSearchErr] = React.useState(false);
   const [isSearchOk, setSearchOk] = React.useState(false);
   const [isLoading, setIsLoading] = React.useState(false);
   const [loggedIn, setLoggedIn] = React.useState(false);
-  const [currentUser, setCurrentUser] = React.useState({});
   const [isMobile, setIsMobile] = React.useState(false);
+  const [currentRow, setCurrentRow] = React.useState(0);
   const [registrationErr, setRegistrationErr] = React.useState("");
+  const [errSearchInput, setErrSearchInput] = React.useState("");
 
   const history = useHistory();
   const {pathname} = useLocation();
 
   function clearSearchErr() {
-    setSearchErr("");
+    setErrSearchInput("");
   }
 
   function openRegisterPopup() {
@@ -130,7 +125,7 @@ function App() {
         .then((res) => {
           setLoggedIn(true);
           setCurrentUser(res.data);
-          getSavedNews();
+          getSavedArticles();
         })
         .catch((err) => console.log(err));
     }
@@ -153,7 +148,7 @@ function App() {
 
   function handleSearchNews(keyword) {
     if (!keyword) {
-      setSearchErr("Нужно ввести ключевое слово");
+      setErrSearchInput("Нужно ввести ключевое слово");
       return;
     }
     setIsLoading(true);
@@ -164,13 +159,15 @@ function App() {
       .getNews(keyword)
       .then((res) => {
         const news = res.articles.map((item) => ({...item, keyword}));
-        console.log(news)
+        console.log(news);
         setNews(news);
         localStorage.setItem("news", JSON.stringify(news));
         setSearchOk(true);
+        setSearchErr(false);
       })
       .catch((err) => {
         console.log(`Ошибка при загрузке новостей: ${err}`);
+        setSearchErr(true);
       })
       .finally(() => setIsLoading(false));
   }
@@ -203,7 +200,7 @@ function App() {
           .catch((err) => setRegistrationErr(err.message));
         setLoggedIn(true);
         closeLoginPopup();
-        getSavedNews();
+        getSavedArticles();
       })
       .catch((err) => {
         setRegistrationErr(err.message);
@@ -211,9 +208,9 @@ function App() {
       .finally(() => setIsLoading(false));
   }
 
-  function getSavedNews() {
+  function getSavedArticles() {
     mainApi
-      .getSavedNews()
+      .getSavedArticles()
       .then((news) => setSavedNews(news.data))
       .catch((err) =>
         console.log(`Ошибка при загрузке сохранённых новостей: ${err.message}`)
@@ -229,9 +226,9 @@ function App() {
     if (!saved) {
       mainApi
         .saveArticle(article)
-        .then(newArticle => setSavedNews([newArticle.data, ...savedNews]))
+        .then((newArticle) => setSavedNews([newArticle.data, ...savedNews]))
         .catch((err) => console.log(err));
-      return;
+      return savedNews;
     }
     handleDeleteArticle(saved);
   }
@@ -240,9 +237,8 @@ function App() {
     mainApi
       .deleteArticle(article._id)
       .then(() => {
-          setSavedNews(savedNews.filter((item) => item._id !== article._id));
-        }
-      )
+        setSavedNews(savedNews.filter((item) => item._id !== article._id));
+      })
       .catch((err) => console.log(`Ошибка при удалении карточки: ${err}`));
   }
 
@@ -270,7 +266,7 @@ function App() {
                 <SearchForm
                   onSearch={handleSearchNews}
                   isLoading={isLoading}
-                  searchErr={searchErr}
+                  errSearchInput={errSearchInput}
                   clearSearchErr={clearSearchErr}
                 />
               </div>
@@ -289,7 +285,7 @@ function App() {
                 onSearch={handleSearchNews}
                 loggedIn={loggedIn}
                 isLoading={isLoading}
-                isError={searchErr}
+                isErr={searchErr}
                 isSearchOk={isSearchOk}
                 currentRow={currentRow}
                 onCardClick={handleArticleClick}

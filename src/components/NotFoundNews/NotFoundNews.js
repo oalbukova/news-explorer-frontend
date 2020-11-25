@@ -1,7 +1,8 @@
 import React from "react";
 
-import "./NotFoundNews.css";
 import noResult from "../../images/not-found.svg";
+import "./NotFoundNews.css";
+
 
 function NotFoundNews(props) {
   const {title, text} = props

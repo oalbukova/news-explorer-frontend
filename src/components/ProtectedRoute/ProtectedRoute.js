@@ -1,7 +1,7 @@
 import React from "react";
-import { Route, Redirect } from "react-router-dom";
+import {Route, Redirect} from "react-router-dom";
 
-const ProtectedRoute = ({ component: Component, ...props }) => {
+const ProtectedRoute = ({component: Component, ...props}) => {
   React.useEffect(() => {
     if (!props.loggedIn && !localStorage.getItem("jwt")) {
       props.openLoginPopup();
@@ -11,7 +11,7 @@ const ProtectedRoute = ({ component: Component, ...props }) => {
   return (
     <Route>
       {
-        props.loggedIn || localStorage.getItem('jwt') ? <Component {...props} /> : <Redirect to="./" />
+        props.loggedIn || localStorage.getItem('jwt') ? <Component {...props} /> : <Redirect to="./"/>
       }
     </Route>
   )
