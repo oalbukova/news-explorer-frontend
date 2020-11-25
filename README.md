@@ -4,10 +4,10 @@
 Данный проект представляет собой типовое веб-приложение для поиска новостей, с помощью которого можно искать новости по ключевому слову и сохранять их в личном кабинете. 
 
 ### Проект доступен по ссылкам: 
-https://albnews.students.nomoreparties.xyz/
-http://albnews.students.nomoreparties.xyz/
-https://www.albnews.students.nomoreparties.xyz/
-http://www.albnews.students.nomoreparties.xyz/
+* https://albnews.students.nomoreparties.xyz/
+* http://albnews.students.nomoreparties.xyz/
+* https://www.albnews.students.nomoreparties.xyz/
+* http://www.albnews.students.nomoreparties.xyz/
 
 ### Публичный IP-адрес сервера: 84.201.134.188
 
