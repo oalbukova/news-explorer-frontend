@@ -45,7 +45,7 @@ function About() {
             Навыки коммуникаций в среде взаимодействия разработчиков Slack.
           </li>
           <li className="about__description-item">
-            Четкое представление понятие дедлайн))))
+            Четкое представление понятия дедлайн))))
           </li>
         </ul>
         <p className="about__text">
