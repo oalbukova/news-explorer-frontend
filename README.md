@@ -1,18 +1,19 @@
 # NewsExplorer
+
 ## Фронтенд для проекта NewsExplorer
 
-Данный проект представляет собой типовое веб-приложение для поиска новостей, с помощью которого можно искать новости по ключевому слову и сохранять их в личном кабинете. 
+Данный проект представляет собой типовое веб-приложение для поиска новостей, с помощью которого можно искать новости по ключевому слову и сохранять их в личном кабинете.
 
-### Проект доступен по ссылкам: 
-* https://albnews.students.nomoreparties.xyz/
-* http://albnews.students.nomoreparties.xyz/
-* https://www.albnews.students.nomoreparties.xyz/
-* http://www.albnews.students.nomoreparties.xyz/
+### Проект доступен по ссылкам:
 
-### Публичный IP-адрес сервера: 84.201.134.188
+- https://ypnews.students.nomoreparties.xyz/
+- http://ypnews.students.nomoreparties.xyz/
+- https://www.ypnews.students.nomoreparties.xyz/
+- http://www.ypnews.students.nomoreparties.xyz/
 
-Верстка сайта происходила согласно: [макет Фигма](https://www.figma.com/file/Dhl21eRzzbFMBe0DU9SglF/Diploma-WEB-v2.0-(for-students)?node-id=157%3A1409)
-   
+### Публичный IP-адрес сервера: 130.193.37.144
+
+Верстка сайта происходила согласно: [макет Фигма](<https://www.figma.com/file/Dhl21eRzzbFMBe0DU9SglF/Diploma-WEB-v2.0-(for-students)?node-id=157%3A1409>)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -83,7 +84,6 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
 
-
-
 ### _Автор: Альбукова Ольга_
+
 _e-mail: o.albukova@gmail.com_
