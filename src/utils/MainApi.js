@@ -1,4 +1,4 @@
-import {BASE_URL} from "./config";
+import { BASE_URL } from "./config";
 
 export const register = (email, password, name) => {
   return fetch(`${BASE_URL}/signup`, {
@@ -8,7 +8,7 @@ export const register = (email, password, name) => {
       "Access-Control-Allow-Credentials": true,
     },
     credentials: "include",
-    body: JSON.stringify({email, password, name}),
+    body: JSON.stringify({ email, password, name }),
   })
     .then((res) => {
       if (!res.ok) {
@@ -36,7 +36,7 @@ export const authorize = (email, password) => {
       "Access-Control-Allow-Credentials": true,
     },
     credentials: "include",
-    body: JSON.stringify({email, password}),
+    body: JSON.stringify({ email, password }),
   })
     .then((res) => {
       if (res.status === 200) {
@@ -54,7 +54,7 @@ export const authorize = (email, password) => {
         localStorage.setItem("jwt", data.token);
         return data.token;
       }
-      //   return;
+      // return;
     })
     .catch((err) => {
       console.log(err);
@@ -99,12 +99,13 @@ export const getSavedArticles = () => {
       Authorization: `Bearer ${localStorage.getItem("jwt")}`,
     },
     credentials: "include",
-  }).then((res) => {
-    if (!res.ok) {
-      return res.json();
-    }
-    return res.json();
   })
+    .then((res) => {
+      if (!res.ok) {
+        return res.json();
+      }
+      return res.json();
+    })
     .catch((err) => {
       console.log(err);
       return Promise.reject(err);
@@ -112,15 +113,8 @@ export const getSavedArticles = () => {
 };
 
 export const saveArticle = (article) => {
-  const {
-    keyword,
-    title,
-    description,
-    publishedAt,
-    source,
-    url,
-    urlToImage,
-  } = article;
+  const { keyword, title, description, publishedAt, source, url, urlToImage } =
+    article;
   return fetch(`${BASE_URL}/articles`, {
     method: "POST",
     headers: {
@@ -137,12 +131,13 @@ export const saveArticle = (article) => {
       url,
       urlToImage,
     }),
-  }).then((res) => {
-    if (!res.ok) {
-      return res.json();
-    }
-    return res.json();
   })
+    .then((res) => {
+      if (!res.ok) {
+        return res.json();
+      }
+      return res.json();
+    })
     .catch((err) => {
       console.log(err);
       return Promise.reject(err);
@@ -158,4 +153,3 @@ export const deleteArticle = (id) => {
     },
   });
 };
-

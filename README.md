@@ -6,10 +6,8 @@
 
 ### Проект доступен по ссылкам:
 
-- https://ypnews.students.nomoreparties.xyz/
-- http://ypnews.students.nomoreparties.xyz/
-- https://www.ypnews.students.nomoreparties.xyz/
-- http://www.ypnews.students.nomoreparties.xyz/
+- https://news.oalbukova.nomoredomains.rocks/
+- http://news.oalbukova.nomoredomains.rocks/
 
 ### Публичный IP-адрес сервера: 130.193.37.144
 

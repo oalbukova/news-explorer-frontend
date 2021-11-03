@@ -2,7 +2,7 @@
   "name": "news-explorer-frontend",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://ypnews.students.nomoreparties.xyz/",
+  "homepage": "https://news.oalbukova.nomoredomains.rocks/",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
@@ -15,7 +15,7 @@
   },
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "npm run build && scp -r ./build/* oalbukova@130.193.37.144:/home/oalbukova/news-explorer-frontend",
+    "deploy": "npm run build && scp -r ./build/* oalbukova@217.28.228.218:/home/oalbukova/news-explorer-frontend",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
