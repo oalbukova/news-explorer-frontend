@@ -6,8 +6,8 @@
 
 ### Проект доступен по ссылкам:
 
-- https://news.oalbukova.nomoredomains.rocks/
-- http://news.oalbukova.nomoredomains.rocks/
+- https://news.oalbukova.nomoredomains.work/
+- http://news.oalbukova.nomoredomains.work/
 
 ### Публичный IP-адрес сервера: 130.193.37.144
 
