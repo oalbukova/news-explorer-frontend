@@ -9,7 +9,7 @@
 - https://news.oalbukova.nomoredomains.work/
 - http://news.oalbukova.nomoredomains.work/
 
-### Публичный IP-адрес сервера: 130.193.37.144
+### Публичный IP-адрес сервера: 62.84.121.254
 
 Верстка сайта происходила согласно: [макет Фигма](<https://www.figma.com/file/Dhl21eRzzbFMBe0DU9SglF/Diploma-WEB-v2.0-(for-students)?node-id=157%3A1409>)
 
